@@ -1,0 +1,41 @@
+.bus{
+    margin-top: 100px;
+}
+
+h3{
+    text-align: center;
+}
+
+input{
+    margin-left: 40%;
+}
+
+button{
+    margin-left: 10px;
+}
+
+table{
+    background-color: white;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+th, td{
+    padding: 20px;
+    text-align: left;
+}
+
+thead{
+    background-color:#246355;
+    color: white;
+    width: 600px;
+}
+
+tr:nth-child(even){
+  background-color: #ddd;
+
+}
+
+td{
+    color: black;
+}

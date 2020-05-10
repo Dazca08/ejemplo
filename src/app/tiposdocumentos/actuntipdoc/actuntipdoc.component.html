@@ -1,0 +1,49 @@
+<app-encabezado></app-encabezado>
+<!--------------------------------------------------------------------------------------------->
+<!-- para actualizar un  Tipo de Documeto -->
+
+<div class="edit">
+    <h2>Actualizar un Tipo de Documento</h2>
+    <form (ngSubmit)="buscarEditarTipDoc()" [formGroup]="ActualizarATipDoc">
+        <table>
+           <tr>
+             <td>id del documento a actualizar:</td>   
+             <td>
+                <input type="text" formControlName="ActualizarIdipDoc">
+             </td>    
+           </tr>
+           
+           <tr>
+               <th></th>
+               <th>
+                <button type="submit" class="btn btn-dark">Buscar</button>
+               </th>
+           </tr>
+        </table>
+
+        <table *ngFor="let tido of MiTipDocE" class="table_2">
+            <tr>
+                <td>Digite el nuevo nombre para el Documento:</td>
+                <td>
+                    <input type="text" [value]="tido.tipo_documento" formControlName="nuevoTipDoc">   
+                </td>
+            </tr>
+
+            <tr>
+               <td>Digite las nuevas iniciales para el Documento:</td>
+               <td>
+                <input type="text" [value]="tido.iniciales_tip_doc" formControlName="nuevoIniTipDoc">
+               </td>     
+            </tr>
+
+            <tr>
+                <th>
+                    <button (click)="ActualizarTipDoc()" type="submit" class="btn btn-dark">Buscar</button>
+                </th>
+            </tr>
+
+        </table>
+    </form>
+
+
+  </div>

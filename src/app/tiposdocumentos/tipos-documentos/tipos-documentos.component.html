@@ -1,0 +1,36 @@
+<app-encabezado></app-encabezado>
+<body>
+
+    <hr><hr>
+<main class="main">
+<div class="conatainer">
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar el listado de Tipos de Documentos -->
+  <h1>Lista Tipos Documentos</h1>
+  <table >
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Inicial</th>
+      </tr>    
+    </thead>
+  <tr *ngFor="let tido of TipDocs" class="egt">
+  
+    <td>{{ tido.id_tipo_documento }}</td>
+
+    <td>{{ tido.nombre_tipo_documento}}</td>
+
+    <td>{{ tido.inicial_tipo_documento}}</td>
+  </tr>
+  </table>
+</div>
+<br><br>
+
+
+</main>
+
+
+
+  </body>

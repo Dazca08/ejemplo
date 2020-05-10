@@ -1,0 +1,35 @@
+<app-encabezado></app-encabezado>
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar un solo Tipo de Documento -->
+<div class="bus">
+   
+  
+    <h3>Digite el id del tipo de documento a buscar:</h3>
+  
+    <form (ngSubmit)="buscarTipDocs()" [formGroup]="filtrarTipDoc">
+      <input type="text" formControlName="textfiltro">
+      <button type="submit" class="btn btn-dark">Buscar</button>
+    </form>
+
+    <table >
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Inicial</th>
+          </tr>    
+        </thead>
+      <tr *ngFor="let tido of MiTipDoc" class="egt">
+      
+        <td>{{ tido.id_tipo_documento }}</td>
+    
+        <td>{{ tido.nombre_tipo_documento}}</td>
+    
+        <td>{{ tido.inicial_tipo_documento}}</td>
+      </tr>
+      </table>
+  
+  
+  </div>
+  
+  <br><br>

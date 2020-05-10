@@ -1,0 +1,75 @@
+
+body{
+    background:#242D41;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.6em;
+    margin: 0;  
+}
+
+h1{
+    font-size: 2rem;
+    line-height: 1 3em;
+}
+p{
+    margin-bottom: 1.6em;
+}
+
+.container{
+    width: 85%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.header{
+    background: #242D41;
+    color:#242D41;
+    padding: 2rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header a{
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+.logo-nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    letter-spacing: 5px;
+    font-size: 1.2em;
+}
+
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li{
+    display: inline-block;
+}
+
+.navigation ul li a{
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+}
+
+.navigation ul li a:hover{
+    background: #61D7C3;
+    color: white;
+}
+
+.main{
+    padding-top: 10rem;
+}

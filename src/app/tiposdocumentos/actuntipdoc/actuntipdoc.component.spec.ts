@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuinicioComponent } from './menuinicio.component';
+import { ActuntipdocComponent } from './actuntipdoc.component';
 
-describe('MenuinicioComponent', () => {
-  let component: MenuinicioComponent;
-  let fixture: ComponentFixture<MenuinicioComponent>;
+describe('ActuntipdocComponent', () => {
+  let component: ActuntipdocComponent;
+  let fixture: ComponentFixture<ActuntipdocComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuinicioComponent ]
+      declarations: [ ActuntipdocComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuinicioComponent);
+    fixture = TestBed.createComponent(ActuntipdocComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
