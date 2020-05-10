@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
-import { HttpModule, } from '@angular/http';
+//import { HttpModule, } from '@angular/http';
 import { HttpClientModule, } from '@angular/common/http';
 import { RouterModule, Routes} from '@angular/router';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
@@ -94,7 +94,7 @@ const appRoutes: Routes =
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpModule,
+   // HttpModule,
     RouterModule.forRoot(appRoutes), // se agregan estos 
     BrowserModule,
     HttpClientModule  // <- Agregar la clase

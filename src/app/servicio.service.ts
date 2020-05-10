@@ -80,23 +80,41 @@ export class ServicioService {
   //-------------------------------------------------------------
  // Método para insertar un nuevo Tipo de documento 
 
-  async insertTipDoc(TipoDocumento): Promise<any> {
+  /*async insertTipDoc(TipoDocumento): Promise<any> {
 
     //console.log(Color, this.Url+"/color")
 
     return new Promise((resolve, reject) => {
-      this.http.post(this.Url + "/tipdoc", TipoDocumento, httpOptions).toPromise()
-    });
-  }
+      this.http.post(this.Url + "/tipdoc", TipoDocumento, httpOptions).toPromise()});
+   
+  
+             }*/
+   async insertTipDoc(TipoDocumento){
+          return this.http.post(this.Url + "/tipdoc", TipoDocumento, httpOptions).pipe(catchError(err => {
+                    return of( err.error );
+                }))
+                .subscribe(res => {
+                console.log(res.ok ,res.message);
+                
+                    console.log(res);
+                },
+                (err) => { console.log(err)
+                
+                       console.log(err);
 
+  },
+
+            );
+
+
+  }
   //-------------------------------------------------------------
  // Método para modificar un  Tipo de documento
 
+  
   async updateTipDoc(cadena): Promise<any> {
 
-    //console.log("33 " + cadena)
-    //console.log("tales 60  " + cadena.id_tip_doc + " - " + cadena.tipo_documento+ " - " +  cadena.iniciales_tip_doc, this.Url + "/tipdoc")
-
+  
  
     return new Promise((resolve, reject) => {
       this.http.put(this.Url + "/tipdoc", cadena, httpOptions).toPromise()

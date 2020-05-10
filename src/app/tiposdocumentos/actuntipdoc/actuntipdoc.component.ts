@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Http } from '@angular/http';
-
+//import { Http } from '@angular/http';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-actuntipdoc',
   templateUrl: './actuntipdoc.component.html',
@@ -56,15 +56,36 @@ export class ActuntipdocComponent implements OnInit {
 
     var cadena = { "id_tipo_documento": textIdTipDoc,"nombre_tipo_documento":nuevoTipDoc, "inicial_tipo_documento" : nuevoIniTipDoc};
     //console.log("tales 48  " + cadena.id_tip_doc + " - " + cadena.tipo_documento + " - " +  cadena.iniciales_tip_doc)
+ Swal.fire({
+  title: 'Esta seguro?',
+  text: "Desea guardar los cambios?",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, guardar!'
+}).then((result) => {
+  if (result.value) {
+    Swal.fire(
 
-    this.servi.updateTipDoc(cadena).then
+      'Guardado!',
+      'El Tipo dedocumento ha sido Actualizado ',
+      'success'
+     
+    )
+    
+     this.servi.updateTipDoc(cadena).then
       (
         res => {
           console.log("res",res)
         }
       ).catch(err => {
         console.log(err)
-      })
+      }) 
+ 
+  }
+})
+    
   } 
 
 
