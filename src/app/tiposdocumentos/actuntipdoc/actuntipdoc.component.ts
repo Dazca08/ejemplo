@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+
+
+import  {TipdocInterface} from 'src/app/interfaces/tipdoc-interface'
+import { Component, OnInit ,ViewChild,EventEmitter, Output } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule,NgForm } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { Observable, of } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
 //import { Http } from '@angular/http';
 import Swal from 'sweetalert2';
 @Component({
@@ -14,8 +20,15 @@ export class ActuntipdocComponent implements OnInit {
   MiTipDocE: any = [];
 
 
-  ActualizarATipDoc: FormGroup;
+  //ActualizarATipDoc: FormGroup;
+   TipoDic:TipdocInterface[];
+  tipodoc:TipdocInterface={
+    id_tipo_documento:'',
+    nombre_tipo_documento:'',
+    inicial_tipo_documento:''
+  }
 
+ IdAcomparar:any
   constructor(
     private formBuilder: FormBuilder,
     private servi: ServicioService,
@@ -26,38 +39,47 @@ export class ActuntipdocComponent implements OnInit {
 
    buscarEditarTipDoc() {
     
-
-    var filtoEvalor = this.ActualizarATipDoc.getRawValue()['ActualizarIdipDoc'];
+     
+   // var filtoEvalor = this.ActualizarATipDoc.getRawValue()['ActualizarIdipDoc'];
     //console.log("iServicio 43 " + filtoEvalor + " ID " + id );
 
+
      
-    this.servi.getTipDoc('/' + filtoEvalor).subscribe((data: {}) => {
+    {
+
+    
+    this.servi.getTipDoc('/' + this.IdAcomparar).subscribe((data: {}) => {
+
 
       this.MiTipDocE = data;
-
+      
       //console.log(" 44" + this.MiTipDocE[0].color)
 
     }, error => { console.log(error) });
     
 
   }
+}
   
   //--------------------------------------------------------------
 
-  public ActualizarTipDoc() {
+  public ActualizarTipDoc({value}:{value:TipdocInterface}) {
 
-
+    
     console.log("Actualiza tipdoc asdsadasdsa")
-  
-    var textIdTipDoc = this.ActualizarATipDoc.getRawValue()['ActualizarIdipDoc'];
+  //  var textIdTipDoc = this.ActualizarATipDoc.getRawValue()['ActualizarIdipDoc'];
     //console.log("  45 " + textIdTipDoc);
-    var nuevoTipDoc = this.ActualizarATipDoc.getRawValue()['nuevoTipDoc'];
+    //var nuevoTipDoc = this.ActualizarATipDoc.getRawValue()['nuevoTipDoc'];
     //console.log("   la 46 " + nuevoTipDoc);
-    var nuevoIniTipDoc = this.ActualizarATipDoc.getRawValue()['nuevoIniTipDoc'];
+    //var nuevoIniTipDoc = this.ActualizarATipDoc.getRawValue()['nuevoIniTipDoc'];
     //console.log("   la 47 " + nuevoIniTipDoc);
   
-    var cadena = { "id_tipo_documento": textIdTipDoc,"nombre_tipo_documento":nuevoTipDoc, "inicial_tipo_documento" : nuevoIniTipDoc};
+    
+
+    //var cadena = { "id_tipo_documento": textIdTipDoc,"nombre_tipo_documento":nuevoTipDoc, "inicial_tipo_documento" : nuevoIniTipDoc};
+
     //console.log("tales 48  " + cadena.id_tip_doc + " - " + cadena.tipo_documento + " - " +  cadena.iniciales_tip_doc)
+   //value.id_tipo_documento= this.IdAcomparar;
  Swal.fire({
   title: 'Esta seguro?',
   text: "Desea guardar los cambios?",
@@ -76,7 +98,7 @@ export class ActuntipdocComponent implements OnInit {
      
     )
     
-     this.servi.updateTipDoc(cadena).then
+     this.servi.updateTipDoc(value).then
       (
         res => {
           console.log("res",res)
@@ -92,7 +114,7 @@ export class ActuntipdocComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.formBuilder.group
+    /*this.formBuilder.group
 
     this.ActualizarATipDoc = this.formBuilder.group(
     {
@@ -101,7 +123,7 @@ export class ActuntipdocComponent implements OnInit {
       nuevoIniTipDoc: [], 
  
     });
-    this.formBuilder.group
+    this.formBuilder.group*/
   
   }
 

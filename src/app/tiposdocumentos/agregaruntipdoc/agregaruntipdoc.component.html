@@ -2,20 +2,30 @@
 <div class="crea">
 
     <h2>Crear un Tipo de Documento </h2>
-
-    <form (ngSubmit)="InsertarTipDoc()" [formGroup]="InsertarGTipDoc">
+<hr>
+    <form  (ngSubmit)="InsertarTipDoc(Form)"  #Form="ngForm" >
         <table>
             <tr>
                 <td>Ingrese Tipo Documento:</td>
                 <td>
-                    <input type="text" formControlName="textTipDoc">
+                   <div class="form-group">
+                         <input type="text" name="nombre_tipo_documento" class="form-control" #nombre_tipo_documentoe="ngModel" [(ngModel)]="tipodoc.nombre_tipo_documento"
+                 >
+                    </div>
+                   
+                  <!-- <input type="text" formControlName="textTipDoc">-->
                 </td>
             </tr>
 
             <tr>
                 <td>Ingrese Inicial Tipo Documento:</td>
                 <td>
-                    <input type="text" formControlName="textiniTipDoc">
+                    <div class="form-group">
+                        <input type="text" name="inicial_tipo_documento" class="form-control" #inicial_tipo_document="ngModel" [(ngModel)]="tipodoc.inicial_tipo_documento"
+                 >
+                    </div>
+                    
+                  <!--<input type="text" formControlName="textiniTipDoc">-->
                 </td>
             </tr>
 
