@@ -1,14 +1,18 @@
 <app-encabezado></app-encabezado>
-<body>
+
 
     <hr><hr>
 <main class="main">
-<div class="conatainer">
+<div class="container">
 
 <!--------------------------------------------------------------------------------------------->
 <!-- para mostrar el listado de Tipos de Documentos -->
   <h1>Lista Tipos Documentos</h1>
-  <table >
+  <hr>
+  
+    <div align="center">
+      <div class="col-md-6">
+         <table class="table table-bordered table-dark table-striped" >
     <thead>
       <tr>
         <th>Id</th>
@@ -25,6 +29,11 @@
     <td>{{ tido.inicial_tipo_documento}}</td>
   </tr>
   </table>
+      </div>
+      
+    </div>
+
+
 </div>
 <br><br>
 
@@ -33,4 +42,4 @@
 
 
 
-  </body>
+
