@@ -30,6 +30,7 @@ export class ActuntipdocComponent implements OnInit {
     var filtoEvalor = this.ActualizarATipDoc.getRawValue()['ActualizarIdipDoc'];
     //console.log("iServicio 43 " + filtoEvalor + " ID " + id );
 
+     
     this.servi.getTipDoc('/' + filtoEvalor).subscribe((data: {}) => {
 
       this.MiTipDocE = data;
@@ -47,13 +48,14 @@ export class ActuntipdocComponent implements OnInit {
 
 
     console.log("Actualiza tipdoc asdsadasdsa")
+  
     var textIdTipDoc = this.ActualizarATipDoc.getRawValue()['ActualizarIdipDoc'];
     //console.log("  45 " + textIdTipDoc);
     var nuevoTipDoc = this.ActualizarATipDoc.getRawValue()['nuevoTipDoc'];
     //console.log("   la 46 " + nuevoTipDoc);
     var nuevoIniTipDoc = this.ActualizarATipDoc.getRawValue()['nuevoIniTipDoc'];
     //console.log("   la 47 " + nuevoIniTipDoc);
-
+  
     var cadena = { "id_tipo_documento": textIdTipDoc,"nombre_tipo_documento":nuevoTipDoc, "inicial_tipo_documento" : nuevoIniTipDoc};
     //console.log("tales 48  " + cadena.id_tip_doc + " - " + cadena.tipo_documento + " - " +  cadena.iniciales_tip_doc)
  Swal.fire({
