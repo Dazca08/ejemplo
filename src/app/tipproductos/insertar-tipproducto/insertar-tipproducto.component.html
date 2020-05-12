@@ -1,0 +1,33 @@
+<app-encabezado></app-encabezado>
+
+<hr><hr>
+<main class="main">
+
+    <div class="containes">
+
+        <h2>Agregar un Tipo de Producto</h2>
+
+    </div>
+
+        <div align=center>
+            <div class="col-md-6">
+                <form (ngSubmit)="InsertarTipProducto(Form)"  #Form="ngForm">
+
+                    <div class="form-group">
+                        <div>  
+                            <label>Nombre Tipo Producto</label>
+                            <input type="text" name="nombre_tipo_producto" class="form-control" #nombre_tipo_producto="ngModel" [(ngModel)]="tipoproducto.nombre_tipo_producto">
+                        </div>
+
+            
+
+                        <div>
+                            <button type="submit" class="btn btn-dark">Agregar</button>        
+                        </div>
+                    </div>
+                </form>
+            </div>        
+        </div>
+
+</main>
+

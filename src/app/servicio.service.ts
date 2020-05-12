@@ -215,7 +215,7 @@ getCargos(): Observable<any> {
 
 
 //-------------------------------------------------------------
- // Método para modificar una persona
+ // Método para modificar un cargo
 
   
  async updateCargo(cadenaCargo): Promise<any> {
@@ -224,6 +224,67 @@ getCargos(): Observable<any> {
  
   return new Promise((resolve, reject) => {
     this.http.put(this.Url + "/cargos", cadenaCargo, httpOptions).toPromise()
+  });
+}
+
+
+// Método Listar los tipos de productos
+   
+getTipProductos(): Observable<any> {
+
+    
+
+  return this.http.get(this.Url + "/tipproductos", httpOptions).pipe(
+    map(this.extractData)      
+  );
+}
+
+
+//-------------------------------------------------------------
+ // Método mostrar un solo tipo producto 
+
+ getTipProducto(id): Observable<any> {
+    
+  return this.http.get(this.Url + "/tipproductos" + id, httpOptions).pipe(
+    map(this.extractData));
+}
+
+
+//-------------------------------------------------------------
+ // Método para insertar un nuevo tipo producto 
+
+  
+ async insertTipProducto(masTipProducto){
+  return this.http.post(this.Url + "/tipproductos", masTipProducto, httpOptions).pipe(catchError(err => {
+            return of( err.error );
+        }))
+        .subscribe(res => {
+        console.log(res.ok ,res.message);
+        
+            console.log(res);
+        },
+        (err) => { console.log(err)
+        
+               console.log(err);
+
+},
+
+    );
+
+
+}
+
+
+//-------------------------------------------------------------
+ // Método para modificar un cargo
+
+  
+ async updateTipProducto(cadenaTipProducto): Promise<any> {
+
+  
+ 
+  return new Promise((resolve, reject) => {
+    this.http.put(this.Url + "/tipproductos", cadenaTipProducto, httpOptions).toPromise()
   });
 }
 

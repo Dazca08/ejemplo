@@ -1,0 +1,45 @@
+<app-encabezado></app-encabezado>
+<hr><hr>
+
+<main class="main">
+
+  <div class="container">
+    <h2>Buscar un Tipo de Producto</h2>
+      <div align="center">
+        <div class="col-md-3">
+          <form (ngSubmit)="buscarTipProducto()" [formGroup]="filtrarTipProducto">
+            <div class="form-group">
+              <label>Digite el id del tipo de documento a buscar:</label>
+              <input type="text" formControlName="textfiltro"> 
+            </div>
+            <div>
+              <button type="submit" class="btn btn-dark">Buscar</button>
+            </div>
+          </form>
+          <hr><hr>
+          <table class="table table-bordered table-dark table-striped" >
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Tipo Producto</th>
+                
+              </tr>    
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let tido of MiTipProducto" class="egt">
+      
+                <td>{{ tido.id_tipo_producto }}</td>
+            
+                <td>{{ tido.nombre_tipo_producto}}</td>
+            
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+    </div>    
+    
+  </div>
+</main>    
+

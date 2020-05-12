@@ -1,0 +1,43 @@
+<app-encabezado></app-encabezado>
+
+
+    <hr><hr>
+<main class="main">
+<div class="container">
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar el listado de Tipos de Documentos -->
+  <h1>Lista Tipos de Productos</h1>
+  <hr>
+  
+    <div align="center">
+      <div class="col-md-6">
+         <table class="table table-bordered table-dark table-striped" >
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tipo Producto</th>
+      </tr>    
+    </thead>
+  <tr *ngFor="let tido of TipProductos" class="egt">
+  
+    <td>{{ tido.id_tipo_producto }}</td>
+
+    <td>{{ tido.nombre_tipo_producto}}</td>
+
+   
+  </tr>
+  </table>
+      </div>
+      
+    </div>
+
+
+</div>
+<br><br>
+
+
+</main>
+
+
+

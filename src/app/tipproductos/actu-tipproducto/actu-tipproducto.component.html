@@ -1,0 +1,62 @@
+<app-encabezado></app-encabezado>
+<!--------------------------------------------------------------------------------------------->
+<!-- para actualizar un  Tipo de Documeto -->
+
+    <h2>Actualizar un Tipo de Producto</h2> 
+    <hr><hr>
+ 
+<div class="edit">
+    <div align="center">
+        <div class="col-md-3">
+            <form (ngSubmit)="buscarEditarTipProducto()" >
+                <div class="form-group">
+                    <label>id del tipo producto a actualizar:</label>
+                    <input type="text" class="form-control" style="width:100" name=" IdAcomparar" placeholder="Poner id a buscar..." [(ngModel)]=" IdAcomparar">
+                </div>
+                <button type="submit" class="btn btn-dark">Buscar</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <form  (ngSubmit)="ActualizarTipProducto(Form)"  #Form="ngForm" >
+      <div class="container">
+        
+          <div align="center">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body" *ngFor="let tido of MiTipProducto">
+                  
+
+                            <div class="form-group">
+                        <input type="hidden" name="id_tipo_producto" class="form-control" #id_tipo_producto="ngModel" [(ngModel)]="tido.id_tipo_producto"
+                 >
+                    </div>
+                       <label>Ingrese el nombre del tipo de producto:</label>
+                       <div class="form-group">
+                         <input type="text" name="nombre_tipo_producto" class="form-control" #nombre_tipo_producto="ngModel" [(ngModel)]="tido.nombre_tipo_producto"
+                 >
+                    </div>
+                        
+                    <hr>
+                     <div align="center">
+            <button type="submit" style="width:200;" class="btn btn-dark">Actualizar</button>
+          </div>
+                </div>
+                
+              </div>
+             </div>
+
+          </div>
+         
+             
+      </div>
+
+       
+     
+    </form>
+
+   
+  </div>

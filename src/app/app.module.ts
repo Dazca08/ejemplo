@@ -33,6 +33,14 @@ import { ListarcargosComponent } from './cargos/listarcargos/listarcargos.compon
 import { BuscarcargoComponent } from './cargos/buscarcargo/buscarcargo.component';
 import { InsertarcargosComponent } from './cargos/insertarcargos/insertarcargos.component';
 import { ActucargosComponent } from './cargos/actucargos/actucargos.component';
+import { ListarTipproductosComponent } from './tipproductos/listar-tipproducto/listar-tipproductos.component';
+import { BuscarTipproductoComponent } from './tipproductos/buscar-tipproducto/buscar-tipproducto.component';
+import { InsertarTipproductoComponent } from './tipproductos/insertar-tipproducto/insertar-tipproducto.component';
+import { ActuTipproductoComponent } from './tipproductos/actu-tipproducto/actu-tipproducto.component';
+import { ListarproductoComponent } from './producto/listarproducto/listarproducto.component';
+import { BuscarproductoComponent } from './producto/buscarproducto/buscarproducto.component';
+import { InsertarproductoComponent } from './producto/insertarproducto/insertarproducto.component';
+import { ActuproductoComponent } from './producto/actuproducto/actuproducto.component';
 
 
 
@@ -113,6 +121,55 @@ const appRoutes: Routes =
     },
 
 
+    {
+      path: 'ListarTipProducto',
+      component: ListarTipproductosComponent,
+    },
+
+
+    {
+      path: 'BuscarTipProducto',
+      component: BuscarTipproductoComponent,
+    },
+
+
+    {
+      path: 'AgregarTipProducto',
+      component: InsertarTipproductoComponent,
+    },
+
+
+    {
+      path: 'EditarTipProducto',
+      component: ActuTipproductoComponent,
+    },
+
+
+    {
+      path: 'ListarProducto',
+      component: ListarproductoComponent,
+    },
+
+
+
+    {
+      path: 'BuscarProducto',
+      component: BuscarproductoComponent,
+    },
+
+
+    {
+      path: 'AgregarProducto',
+      component: InsertarproductoComponent,
+    },
+
+
+    
+    {
+      path: 'EditarProducto',
+      component: ActuproductoComponent,
+    },
+
     
 
   ];
@@ -138,7 +195,15 @@ const appRoutes: Routes =
     ListarcargosComponent,
     BuscarcargoComponent,
     InsertarcargosComponent,
-    ActucargosComponent,  //<- Adicionar los componentes
+    ActucargosComponent,
+    ListarTipproductosComponent,
+    BuscarTipproductoComponent,
+    InsertarTipproductoComponent,
+    ActuTipproductoComponent,
+    ListarproductoComponent,
+    BuscarproductoComponent,
+    InsertarproductoComponent,
+    ActuproductoComponent,  //<- Adicionar los componentes
   ],
 
   imports: 
