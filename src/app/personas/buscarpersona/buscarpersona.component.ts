@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioService } from '../../servicio.service';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-buscarpersona',
@@ -7,9 +11,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarpersonaComponent implements OnInit {
 
-  constructor() { }
+  MiPersona: any = [];
+  filtrarPersona: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private servi: ServicioService,
+    Router: Router) { }
+
+    public buscarPersona() {
+
+      var filtovalor = this.filtrarPersona.getRawValue()['textfiltro'];
+  
+      this.servi.getPersona('/' + filtovalor).subscribe((data: {}) => {this.MiPersona = data;}, error => {console.log(error)});
+      
+    }
 
   ngOnInit(): void {
+    this.filtrarPersona = this.formBuilder.group(
+      {
+        textfiltro: []
+      }); 
+      this.formBuilder.group
   }
 
 }

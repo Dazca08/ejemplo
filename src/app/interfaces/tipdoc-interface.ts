@@ -3,3 +3,5 @@ export interface TipdocInterface {
 	nombre_tipo_documento?:string;
 	inicial_tipo_documento?:string;
 }
+
+

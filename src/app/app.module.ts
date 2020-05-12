@@ -27,6 +27,12 @@ import { AgregaruntipdocComponent } from './tiposdocumentos/agregaruntipdoc/agre
 import { ActuntipdocComponent } from './tiposdocumentos/actuntipdoc/actuntipdoc.component';
 import { ListarpersonasComponent } from './personas/listarpersonas/listarpersonas.component';
 import { BuscarpersonaComponent } from './personas/buscarpersona/buscarpersona.component';
+import { InsertarpersonaComponent } from './personas/insertarpersona/insertarpersona.component';
+import { ActupersonaComponent } from './personas/actupersona/actupersona.component';
+import { ListarcargosComponent } from './cargos/listarcargos/listarcargos.component';
+import { BuscarcargoComponent } from './cargos/buscarcargo/buscarcargo.component';
+import { InsertarcargosComponent } from './cargos/insertarcargos/insertarcargos.component';
+import { ActucargosComponent } from './cargos/actucargos/actucargos.component';
 
 
 
@@ -65,6 +71,26 @@ const appRoutes: Routes =
       component: ActuntipdocComponent,
     },
 
+    {
+      path: 'ListarPersona',
+      component:ListarpersonasComponent,
+    },
+
+    {
+      path: 'BuscarPersona',
+      component: BuscarpersonaComponent,
+    },
+
+    {
+      path: 'AgregarPersona',
+      component: InsertarpersonaComponent,
+    },
+
+    {
+      path: 'EditarPersona',
+      component: ActupersonaComponent,
+    },
+
 
     
 
@@ -85,7 +111,13 @@ const appRoutes: Routes =
     AgregaruntipdocComponent,
     ActuntipdocComponent,
     ListarpersonasComponent,
-    BuscarpersonaComponent,  //<- Adicionar los componentes
+    BuscarpersonaComponent,
+    InsertarpersonaComponent,
+    ActupersonaComponent,
+    ListarcargosComponent,
+    BuscarcargoComponent,
+    InsertarcargosComponent,
+    ActucargosComponent,  //<- Adicionar los componentes
   ],
 
   imports: 

@@ -1,1 +1,62 @@
-<p>listarpersonas works!</p>
+<app-encabezado></app-encabezado>
+
+
+    <hr><hr>
+<main class="main">
+<div class="container">
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar el listado de Tipos de Documentos -->
+  <h1>Lista de Personas</h1>
+  <hr>
+  
+    <div align="center">
+      <div class="col-md-6">
+         <table class="table table-bordered table-dark table-striped" >
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tipo Documento</th>
+        <th>Numero Documento</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Fecha Nacimiento</th>
+        <th>Correo Electronico</th>
+        <th>Telefono</th>
+        <th>Genero</th>
+        <th>Cargo</th>
+      </tr>    
+    </thead>
+  <tr *ngFor="let tido of Personas" class="egt">
+  
+    <td>{{ tido.id_persona }}</td>
+
+    <td>{{ tido.inicial_tipo_documento}}</td>
+
+    <td>{{ tido.num_documento_persona}}</td>
+
+    <td>{{tido.nombre_completo}}</td>
+
+    <td>{{tido.apellidos}}</td>
+    
+    <td>{{tido.fecha_nacimiento_persona}}</td>
+
+    <td>{{tido.correo_persona}}</td>
+
+    <td>{{tido.telefono_persona}}</td>
+
+    <td>{{tido.sexo_persona}}</td>
+
+    <td>{{tido.nombre_cargo}}</td>
+  </tr>
+  </table>
+      </div>
+      
+    </div>
+
+
+</div>
+<br><br>
+
+
+</main>

@@ -1,0 +1,128 @@
+<app-encabezado></app-encabezado>
+<!--------------------------------------------------------------------------------------------->
+<!-- para actualizar un  Tipo de Documeto -->
+
+    <h2>Actualizar datos de una persona:</h2> 
+    <hr><hr>
+ 
+<div class="edit">
+    <div align="center">
+        <div class="col-md-3">
+            <form (ngSubmit)="buscarEditarPersona()" >
+                <div class="form-group">
+                    <label>id de la persona a actualizar:</label>
+                    <input type="text" class="form-control" style="width:100" name=" IdAcomparar" placeholder="Poner id a buscar..." [(ngModel)]=" IdAcomparar">
+                </div>
+                <button type="submit" class="btn btn-dark">Buscar</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <form  (ngSubmit)="ActualizarPersona(Form)"  #Form="ngForm" >
+      <div class="container">
+        
+          <div align="center">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body" *ngFor="let tido of PersonaA">
+                  
+
+                            <div class="form-group">
+                        <input type="hidden" name="id_persona" class="form-control" #id_persona="ngModel" [(ngModel)]="tido.id_persona"
+                 >
+                    </div>
+                       <label>Ingrese el tipo de documento:</label>
+                       <div class="form-group">
+                         <input type="text" name="tip_doc_persona" class="form-control" #tip_doc_persona="ngModel" [(ngModel)]="tido.tip_doc_persona"
+                 >
+                    </div>
+                        <label>Ingrese numero de documento:</label>
+                   <div class="form-group">
+                        <input type="text" name="num_documento_persona" class="form-control" #num_documento_persona="ngModel" [(ngModel)]="tido.num_documento_persona"
+                 >
+                    </div>
+
+                    <label>Ingrese primer nombre:</label>
+                   <div class="form-group">
+                        <input type="text" name="nombre1_persona" class="form-control" #nombre1_persona="ngModel" [(ngModel)]="tido.nombre1_persona"
+                 >
+                    </div>
+
+                    <label>Ingrese segundo nombre:</label>
+                   <div class="form-group">
+                        <input type="text" name="nombre2_persona" class="form-control" #nombre2_persona="ngModel" [(ngModel)]="tido.nombre2_persona"
+                 >
+                    </div>
+
+
+                    <label>Ingrese primer apellido:</label>
+                   <div class="form-group">
+                        <input type="text" name="apellido1_persona" class="form-control" #apellido1_persona="ngModel" [(ngModel)]="tido.apellido1_persona"
+                 >
+                    </div>
+
+
+                    <label>Ingrese segundo apellido:</label>
+                   <div class="form-group">
+                        <input type="text" name="apellido2_persona" class="form-control" #apellido2_persona="ngModel" [(ngModel)]="tido.apellido2_persona"
+                 >
+                    </div>
+
+
+                    <label>Ingrese fecha nacimiento:</label>
+                   <div class="form-group">
+                        <input type="text" name="fecha_nacimiento_persona" class="form-control" #fecha_nacimiento_persona="ngModel" [(ngModel)]="tido.fecha_nacimiento_persona"
+                 >
+                    </div>
+
+
+                    <label>Ingrese correo electronico:</label>
+                   <div class="form-group">
+                        <input type="text" name="correo_persona" class="form-control" #correo_persona="ngModel" [(ngModel)]="tido.correo_persona"
+                 >
+                    </div>
+
+
+                    <label>Ingrese telefono:</label>
+                   <div class="form-group">
+                        <input type="text" name="telefono_persona" class="form-control" #telefono_persona="ngModel" [(ngModel)]="tido.telefono_persona"
+                 >
+                    </div>
+
+
+                    <label>Ingrese genero:</label>
+                    <div class="form-group">
+                         <input type="text" name="sexo_persona" class="form-control" #sexo_persona="ngModel" [(ngModel)]="tido.sexo_persona"
+                  >
+                     </div>
+
+
+                     <label>Ingrese cargo:</label>
+                     <div class="form-group">
+                          <input type="text" name="cargo_persona" class="form-control" #cargo_persona="ngModel" [(ngModel)]="tido.cargo_persona"
+                   >
+                      </div>
+                     
+                    <hr>
+                     <div align="center">
+            <button type="submit" style="width:200;" class="btn btn-dark">Actualizar</button>
+          </div>
+                </div>
+                
+              </div>
+             </div>
+
+          </div>
+         
+             
+      </div>
+
+       
+     
+    </form>
+
+   
+  </div>

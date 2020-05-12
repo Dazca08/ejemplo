@@ -1,42 +1,35 @@
 <app-encabezado></app-encabezado>
-<div class="crea">
 
-    <h2>Crear un Tipo de Documento </h2>
-<hr>
-    <form  (ngSubmit)="InsertarTipDoc(Form)"  #Form="ngForm" >
-        <table>
-            <tr>
-                <td>Ingrese Tipo Documento:</td>
-                <td>
-                   <div class="form-group">
-                         <input type="text" name="nombre_tipo_documento" class="form-control" #nombre_tipo_documentoe="ngModel" [(ngModel)]="tipodoc.nombre_tipo_documento"
-                 >
-                    </div>
-                   
-                  <!-- <input type="text" formControlName="textTipDoc">-->
-                </td>
-            </tr>
+<hr><hr>
+<main class="main">
 
-            <tr>
-                <td>Ingrese Inicial Tipo Documento:</td>
-                <td>
+    <div class="containes">
+
+        <h2>Agregar un Tipo de Documento</h2>
+
+    </div>
+
+        <div align=center>
+            <div class="col-md-6">
+                <form (ngSubmit)="InsertarTipDoc(Form)"  #Form="ngForm">
+
                     <div class="form-group">
-                        <input type="text" name="inicial_tipo_documento" class="form-control" #inicial_tipo_document="ngModel" [(ngModel)]="tipodoc.inicial_tipo_documento"
-                 >
-                    </div>
-                    
-                  <!--<input type="text" formControlName="textiniTipDoc">-->
-                </td>
-            </tr>
+                        <div>  
+                            <label>Nombre Tipo Documento:</label>
+                            <input type="text" name="nombre_tipo_documento" class="form-control" #nombre_tipo_documentoe="ngModel" [(ngModel)]="tipodoc.nombre_tipo_documento">
+                        </div>
 
-            <tr>
-                <th></th>
-                <th>
-                    <button type="submit" class="btn btn-dark">Agregar</button>
-                </th>
-            </tr>
-        </table>
-        
-    </form>
-      
-  </div>
+                        <div>
+                            <label>Iniciales Tipo Documento:</label>
+                            <input type="text" name="inicial_tipo_documento" class="form-control" #inicial_tipo_document="ngModel" [(ngModel)]="tipodoc.inicial_tipo_documento">
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-dark">Agregar</button>        
+                        </div>
+                    </div>
+                </form>
+            </div>        
+        </div>
+
+</main>

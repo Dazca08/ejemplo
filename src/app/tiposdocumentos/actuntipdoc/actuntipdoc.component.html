@@ -3,21 +3,21 @@
 <!-- para actualizar un  Tipo de Documeto -->
 
     <h2>Actualizar un Tipo de Documento</h2> 
-    <hr>
+    <hr><hr>
  
 <div class="edit">
-<div align="center">
-  <div class="col-md-3">
-      <form (ngSubmit)="buscarEditarTipDoc()" >
-  <div class="form-group">
-    <label>id del documento a actualizar:</label>
-        <input type="text" class="form-control" style="width:100" name=" IdAcomparar" placeholder="Poner id a buscar..." [(ngModel)]=" IdAcomparar">
-     </div>
-  <button type="submit" class="btn btn-dark">Buscar</button>
-  </form>
-  </div>
+    <div align="center">
+        <div class="col-md-3">
+            <form (ngSubmit)="buscarEditarTipDoc()" >
+                <div class="form-group">
+                    <label>id del documento a actualizar:</label>
+                    <input type="text" class="form-control" style="width:100" name=" IdAcomparar" placeholder="Poner id a buscar..." [(ngModel)]=" IdAcomparar">
+                </div>
+                <button type="submit" class="btn btn-dark">Buscar</button>
+            </form>
+        </div>
 
-</div>
+    </div>
 
 
 
@@ -58,86 +58,9 @@
              
       </div>
 
-       <!-- <table *ngFor="let tido of MiTipDocE">
-            <tr>
-
-               <div class="form-group">
-                        <input type="hidden" name="id_tipo_documento" class="form-control" #id_tipo_documento="ngModel" [(ngModel)]="tido.id_tipo_documento"
-                 >
-                    </div>
-                <td>Ingrese Tipo Documento:</td>
-                <td>
-                   <div class="form-group">
-                         <input type="text" name="nombre_tipo_documento" class="form-control" #nombre_tipo_documentoe="ngModel" [(ngModel)]="tido.nombre_tipo_documento"
-                 >
-                    </div>
-                   
-                 
-                </td>
-            </tr>
-
-            <tr>
-                <td>Ingrese Inicial Tipo Documento:</td>
-                <td>
-                    <div class="form-group">
-                        <input type="text" name="inicial_tipo_documento" class="form-control" #inicial_tipo_document="ngModel" [(ngModel)]="tido.inicial_tipo_documento"
-                 >
-                    </div>
-                    
-                
-                </td>
-            </tr>
-
-            <tr>
-                <th></th>
-                <th>
-                    <button type="submit" class="btn btn-dark">Actualizar</button>
-                </th>
-            </tr>
-        </table>-->
+       
      
     </form>
 
-   <!-- <form (ngSubmit)="buscarEditarTipDoc()" [formGroup]="ActualizarATipDoc">
-        <table>
-           <tr>
-             <td></td>   
-             <td>
-                
-             </td>    
-           </tr>
-           
-           <tr>
-               <th></th>
-               <th>
-                <button type="submit" class="btn btn-dark">Buscar</button>
-               </th>
-           </tr>
-        </table>
-
-        <table *ngFor="let tido of MiTipDocE" class="table_2">
-            <tr>
-                <td>Digite el nuevo nombre para el Documento:</td>
-                <td>
-                    <input type="text" [value]="tido.tipo_documento" formControlName="nuevoTipDoc">   
-                </td>
-            </tr>
-
-            <tr>
-               <td>Digite las nuevas iniciales para el Documento:</td>
-               <td>
-                <input type="text" [value]="tido.iniciales_tip_doc" formControlName="nuevoIniTipDoc">
-               </td>     
-            </tr>
-
-            <tr>
-                <th>
-                   
-                </th>
-            </tr>
-
-        </table>
-    </form>-->
-
-
+   
   </div>

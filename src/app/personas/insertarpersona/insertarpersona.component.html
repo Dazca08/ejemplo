@@ -1,0 +1,89 @@
+<app-encabezado></app-encabezado>
+
+<hr><hr>
+<main class="main">
+
+    <div class="container">
+
+        <h2>Agregar una persona</h2>
+
+    </div>
+
+        <div align=center>
+            <div class="col-md-6">
+                <form (ngSubmit)="InsertarPersona(Form)"  #Form="ngForm">
+
+                    <div class="form-group">
+                        <select>
+                            <option *ngFor="let tido of TipDocs" value="value1">{{tido.nombre_tipo_documento}}</option> 
+                        </select>
+                    <div *ngFor="let tido of TipDocs; let i = index" [attr.data-index]="i" class="egt">
+                    <h2>{{tido.nombre_tipo_documento}}</h2>
+                    <h2>{{tido.index}}</h2>
+                    </div>
+
+                        <div>  
+                            <label>Tipo Documento:</label>
+                            <input type="text" name="tip_doc_persona" class="form-control" #tip_doc_documento="ngModel" [(ngModel)]="MiPersona.tip_doc_persona">
+                        </div>
+
+                        <div>
+                            <label>Digite el numero de documento:</label>
+                            <input type="text" name="num_documento_persona" class="form-control" #num_documento_persona="ngModel" [(ngModel)]="MiPersona.num_documento_persona">
+                        </div>
+
+                        <div>
+                            <label>Digite el Primer Nombre:</label>
+                            <input type="text" name="nombre1_persona" class="form-control" #nombre1_persona="ngModel" [(ngModel)]="MiPersona.nombre1_persona">
+                        </div>
+
+                        <div>
+                            <label>Digite el Segundo Nombre:</label>
+                            <input type="text" name="nombre2_persona" class="form-control" #nombre2_persona="ngModel" [(ngModel)]="MiPersona.nombre2_persona">
+                        </div>
+
+                        <div>
+                            <label>Digite el Primer Apellido:</label>
+                            <input type="text" name="apellido1_persona" class="form-control" #apellido1_persona="ngModel" [(ngModel)]="MiPersona.apellido1_persona">
+                        </div>
+
+                        <div>
+                            <label>Digite el Segundo Apellido:</label>
+                            <input type="text" name="apellido2_persona" class="form-control" #apellido2_persona="ngModel" [(ngModel)]="MiPersona.apellido2_persona">
+                        </div>
+
+
+                        <div>
+                            <label>Digite Fecha de Nacimiento:</label>
+                            <input type="date" name="fecha_nacimiento_persona" class="form-control" #fecha_nacimiento_persona="ngModel" [(ngModel)]="MiPersona.fecha_nacimiento_persona">
+                        </div>
+
+                        <div>
+                            <label>Digite el correo:</label>
+                            <input type="text" name="correo_persona" class="form-control" #correo_persona="ngModel" [(ngModel)]="MiPersona.correo_persona">
+                        </div>
+
+                        <div>
+                            <label>Digite el Telefono:</label>
+                            <input type="text" name="telefono_persona" class="form-control" #telefono_persona="ngModel" [(ngModel)]="MiPersona.telefono_persona">
+                        </div>
+
+                        <div>
+                            <label>Seleccione el Genero:</label>
+                            <input type="text" name="sexo_persona" class="form-control" #sexo_persona="ngModel" [(ngModel)]="MiPersona.sexo_persona">
+                        </div>
+
+                        <div>
+                            <label>Seleccione el Cargo:</label>
+                            <input type="text" name="cargo_persona" class="form-control" #cargo_persona="ngModel" [(ngModel)]="MiPersona.cargo_persona">
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-dark">Agregar</button>        
+                        </div>
+                    </div>
+                </form>
+            </div>        
+        </div>
+
+</main>

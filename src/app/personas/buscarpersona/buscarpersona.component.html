@@ -1,1 +1,69 @@
-<p>buscarpersona works!</p>
+<app-encabezado></app-encabezado>
+<hr><hr>
+
+<main class="main">
+
+  <div class="container">
+    <h2>Buscar una Persona</h2>
+      <div align="center">
+        <div class="col-md-3">
+          <form (ngSubmit)="buscarPersona()" [formGroup]="filtrarPersona">
+            <div class="form-group">
+              <label>Digite el id de la Persona a buscar:</label>
+              <input type="text" formControlName="textfiltro"> 
+            </div>
+            <div>
+              <button type="submit" class="btn btn-dark">Buscar</button>
+            </div>
+          </form>
+          <hr><hr>
+          <table class="table table-bordered table-dark table-striped" >
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Tipo Documento</th>
+                <th>Numero Documento</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha Nacimiento</th>
+                <th>Correo Electronico</th>
+                <th>Telefono</th>
+                <th>Genero</th>
+                <th>Cargo</th>
+              </tr>    
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let tido of MiPersona" class="egt">
+      
+                <td>{{ tido.id_persona }}</td>
+            
+                <td>{{ tido.inicial_tipo_documento}}</td>
+            
+                <td>{{ tido.num_documento_persona}}</td>
+
+                <td>{{tido.nombre_completo}}</td>
+
+                <td>{{tido.apellidos}}</td>
+
+                <td>{{tido.fecha_nacimiento_persona}}</td>
+
+                <td>{{tido.correo_persona}}</td>
+            
+                <td>{{tido.telefono_persona}}</td>
+            
+                <td>{{tido.sexo_persona}}</td>
+            
+                <td>{{tido.nombre_cargo}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+    </div>    
+    
+  </div>
+</main>    
+
+

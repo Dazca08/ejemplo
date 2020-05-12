@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-//import { Http } from '@angular/http';
+
 
 
 @Component({
@@ -21,16 +21,14 @@ export class TiposDocumentosComponent implements OnInit {
   
 
 
-  ;
+  
 
   constructor(
       private formBuilder: FormBuilder,
       private servi: ServicioService,
       Router: Router) { }
 
-  //=============================================================
-  //LOS CRUL
-  //=============================================================
+  
 
    consultaTipDocs() {
     
@@ -44,9 +42,7 @@ export class TiposDocumentosComponent implements OnInit {
  
 
  
-  //=============================================================
-  //LAS FUNCIONES PARA LLAMARLAS DESDE EL HTML
-  //=============================================================  
+
   ngOnInit() {
 
    this.consultaTipDocs();

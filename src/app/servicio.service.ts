@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
 
-//para el manejo y estilo de los Json
+//Manejo y estilo de los Json
 const httpOptions =
 {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -18,10 +18,10 @@ const httpOptions =
     providedIn: 'root'
   })
 
-//exporta el servicio 
+
 export class ServicioService {
 
-  //dirección del servicio en el Back-End BE
+  //dirección del  Back-End 
   private Url: string = 'http://localhost:3300';
 
   constructor(private http: HttpClient) { }
@@ -29,11 +29,10 @@ export class ServicioService {
 
   //Método para extraer los datos del servicio BE
   private extractData(res: Response) {
-    //console.log("12", res);
+    
 
     let body = res;
     
-    //console.log("13")
     return body || {};
     ;
   }
@@ -49,19 +48,12 @@ export class ServicioService {
     };
   }
 
-  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  // TODOS LOS CRUL DE TODAS LAS CLASES DEL PROYECTO 
-  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
-  //=============================================================
-  // SERVICIO CRUL DE TIPOS DE DOCUMENTOS
-  //=============================================================
-
   // Método Listar de los Tipos de documentos
-  //Mismos nombres de los metodos en la clase rutas del BE 
+   
   getTipDocs(): Observable<any> {
 
-    //console.log("estamos aqui  " + this.Url+ "/marca", httpOptions);
+    
 
     return this.http.get(this.Url + "/tipdoc", httpOptions).pipe(
       map(this.extractData)      
@@ -80,15 +72,7 @@ export class ServicioService {
   //-------------------------------------------------------------
  // Método para insertar un nuevo Tipo de documento 
 
-  /*async insertTipDoc(TipoDocumento): Promise<any> {
-
-    //console.log(Color, this.Url+"/color")
-
-    return new Promise((resolve, reject) => {
-      this.http.post(this.Url + "/tipdoc", TipoDocumento, httpOptions).toPromise()});
-   
   
-             }*/
    async insertTipDoc(TipoDocumento){
           return this.http.post(this.Url + "/tipdoc", TipoDocumento, httpOptions).pipe(catchError(err => {
                     return of( err.error );
@@ -122,7 +106,63 @@ export class ServicioService {
   }
  
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// SE CONTINUA CON LOS CRUL DE OTRA CLASE 
+// Personas 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+getPersonas(): Observable<any> {
+
+    
+
+  return this.http.get(this.Url + "/personas", httpOptions).pipe(
+    map(this.extractData)      
+  );
+}
+
+//-------------------------------------------------------------
+ // Método mostrar una sola persona 
+
+ getPersona(id): Observable<any> {
+    
+  return this.http.get(this.Url + "/personas" + id, httpOptions).pipe(
+    map(this.extractData));
+}
+
+
+ //-------------------------------------------------------------
+ // Método para insertar una nueva persona 
+
+  
+ async insertPersona(maspersonas){
+  return this.http.post(this.Url + "/personas", maspersonas, httpOptions).pipe(catchError(err => {
+            return of( err.error );
+        }))
+        .subscribe(res => {
+        console.log(res.ok ,res.message);
+        
+            console.log(res);
+        },
+        (err) => { console.log(err)
+        
+               console.log(err);
+
+},
+
+    );
+
+
+}
+
+//-------------------------------------------------------------
+ // Método para modificar una persona
+
+  
+ async updatePersona(cadenaPersona): Promise<any> {
+
+  
+ 
+  return new Promise((resolve, reject) => {
+    this.http.put(this.Url + "/personas", cadenaPersona, httpOptions).toPromise()
+  });
+}
 
 }

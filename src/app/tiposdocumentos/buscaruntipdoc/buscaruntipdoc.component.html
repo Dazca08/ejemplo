@@ -1,35 +1,46 @@
 <app-encabezado></app-encabezado>
-<!--------------------------------------------------------------------------------------------->
-<!-- para mostrar un solo Tipo de Documento -->
-<div class="bus">
-   
-  
-    <h3>Digite el id del tipo de documento a buscar:</h3>
-  
-    <form (ngSubmit)="buscarTipDocs()" [formGroup]="filtrarTipDoc">
-      <input type="text" formControlName="textfiltro">
-      <button type="submit" class="btn btn-dark">Buscar</button>
-    </form>
+<hr><hr>
 
-    <table >
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Inicial</th>
-          </tr>    
-        </thead>
-      <tr *ngFor="let tido of MiTipDoc" class="egt">
+<main class="main">
+
+  <div class="container">
+    <h2>Buscar un Tipo de Documento</h2>
+      <div align="center">
+        <div class="col-md-3">
+          <form (ngSubmit)="buscarTipDocs()" [formGroup]="filtrarTipDoc">
+            <div class="form-group">
+              <label>Digite el id del tipo de documento a buscar:</label>
+              <input type="text" formControlName="textfiltro"> 
+            </div>
+            <div>
+              <button type="submit" class="btn btn-dark">Buscar</button>
+            </div>
+          </form>
+          <hr><hr>
+          <table class="table table-bordered table-dark table-striped" >
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Inicial</th>
+              </tr>    
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let tido of MiTipDoc" class="egt">
       
-        <td>{{ tido.id_tipo_documento }}</td>
+                <td>{{ tido.id_tipo_documento }}</td>
+            
+                <td>{{ tido.nombre_tipo_documento}}</td>
+            
+                <td>{{ tido.inicial_tipo_documento}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+    </div>    
     
-        <td>{{ tido.nombre_tipo_documento}}</td>
-    
-        <td>{{ tido.inicial_tipo_documento}}</td>
-      </tr>
-      </table>
-  
-  
   </div>
-  
-  <br><br>
+</main>    
+
