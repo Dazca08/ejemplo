@@ -1,1 +1,62 @@
-<p>actucargos works!</p>
+<app-encabezado></app-encabezado>
+<!--------------------------------------------------------------------------------------------->
+<!-- para actualizar un  Tipo de Documeto -->
+
+    <h2>Actualizar un Cargo</h2> 
+    <hr><hr>
+ 
+<div class="edit">
+    <div align="center">
+        <div class="col-md-3">
+            <form (ngSubmit)="buscarEditarCargo()" >
+                <div class="form-group">
+                    <label>id del Cargo a actualizar:</label>
+                    <input type="text" class="form-control" style="width:100" name=" IdAcomparar" placeholder="Poner id a buscar..." [(ngModel)]=" IdAcomparar">
+                </div>
+                <button type="submit" class="btn btn-dark">Buscar</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <form  (ngSubmit)="ActualizarCargo(Form)"  #Form="ngForm" >
+      <div class="container">
+        
+          <div align="center">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body" *ngFor="let tido of MiCargo">
+                  
+
+                            <div class="form-group">
+                        <input type="hidden" name="id_cargo" class="form-control" #id_cargo="ngModel" [(ngModel)]="tido.id_cargo"
+                 >
+                    </div>
+                       <label>Ingrese el nombre del cargo:</label>
+                       <div class="form-group">
+                         <input type="text" name="nombre_cargo" class="form-control" #nombre_cargo="ngModel" [(ngModel)]="tido.nombre_cargo"
+                 >
+                    </div>
+                    
+                    <hr>
+                     <div align="center">
+            <button type="submit" style="width:200;" class="btn btn-dark">Actualizar</button>
+          </div>
+                </div>
+                
+              </div>
+             </div>
+
+          </div>
+         
+             
+      </div>
+
+       
+     
+    </form>
+
+   
+  </div>

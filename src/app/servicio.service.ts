@@ -165,4 +165,71 @@ getPersonas(): Observable<any> {
   });
 }
 
+
+
+// Método Listar los cargos
+   
+getCargos(): Observable<any> {
+
+    
+
+  return this.http.get(this.Url + "/cargos", httpOptions).pipe(
+    map(this.extractData)      
+  );
 }
+
+
+//-------------------------------------------------------------
+ // Método mostrar un solo cargo 
+
+ getCargo(id): Observable<any> {
+    
+  return this.http.get(this.Url + "/cargos" + id, httpOptions).pipe(
+    map(this.extractData));
+}
+
+
+//-------------------------------------------------------------
+ // Método para insertar un nuevo cargo 
+
+  
+ async insertCargo(mascargos){
+  return this.http.post(this.Url + "/cargos", mascargos, httpOptions).pipe(catchError(err => {
+            return of( err.error );
+        }))
+        .subscribe(res => {
+        console.log(res.ok ,res.message);
+        
+            console.log(res);
+        },
+        (err) => { console.log(err)
+        
+               console.log(err);
+
+},
+
+    );
+
+
+}
+
+
+//-------------------------------------------------------------
+ // Método para modificar una persona
+
+  
+ async updateCargo(cadenaCargo): Promise<any> {
+
+  
+ 
+  return new Promise((resolve, reject) => {
+    this.http.put(this.Url + "/cargos", cadenaCargo, httpOptions).toPromise()
+  });
+}
+
+
+
+}
+
+
+

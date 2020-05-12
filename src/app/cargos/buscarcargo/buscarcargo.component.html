@@ -1,1 +1,47 @@
-<p>buscarcargo works!</p>
+<app-encabezado></app-encabezado>
+<hr><hr>
+
+<main class="main">
+
+  <div class="container">
+    <h2>Buscar un Cargo</h2>
+      <div align="center">
+        <div class="col-md-3">
+          <form (ngSubmit)="buscarCargos()" [formGroup]="filtrarCargo">
+            <div class="form-group">
+              <label>Digite el id del Cargo a buscar:</label>
+              <input type="text" formControlName="textfiltro"> 
+            </div>
+            <div>
+              <button type="submit" class="btn btn-dark">Buscar</button>
+            </div>
+          </form>
+          <hr><hr>
+          <table class="table table-bordered table-dark table-striped" >
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Cargo</th>
+                
+              </tr>    
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let tido of MiCargo" class="egt">
+      
+                <td>{{ tido.id_cargo }}</td>
+            
+                <td>{{ tido.nombre_cargo}}</td>
+            
+                
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+    </div>    
+    
+  </div>
+</main>    
+
+

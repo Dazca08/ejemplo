@@ -91,6 +91,27 @@ const appRoutes: Routes =
       component: ActupersonaComponent,
     },
 
+    {
+      path: 'ListarCargo',
+      component: ListarcargosComponent,
+    },
+
+    {
+      path: 'BuscarCargo',
+      component: BuscarcargoComponent,
+    },
+
+
+    {
+      path: 'AgregarCargo',
+      component: InsertarcargosComponent,
+    },
+
+    {
+      path: 'EditarCargo',
+      component: ActucargosComponent,
+    },
+
 
     
 

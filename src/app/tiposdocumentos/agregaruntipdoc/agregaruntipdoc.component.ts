@@ -17,6 +17,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./agregaruntipdoc.component.css']
 })
 export class AgregaruntipdocComponent implements OnInit {
+  
+
+
+  
   TipoDic:TipdocInterface[];
   tipodoc:TipdocInterface={
     id_tipo_documento:'',

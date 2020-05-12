@@ -1,1 +1,32 @@
-<p>insertarcargos works!</p>
+<app-encabezado></app-encabezado>
+
+<hr><hr>
+<main class="main">
+
+    <div class="containes">
+
+        <h2>Agregar un Cargo</h2>
+
+    </div>
+
+        <div align=center>
+            <div class="col-md-6">
+                <form (ngSubmit)="InsertarCargo(Form)"  #Form="ngForm">
+
+                    <div class="form-group">
+                        <div>  
+                            <label>Digite el nombre del Cargo:</label>
+                            <input type="text" name="nombre_cargo" class="form-control" #nombre_cargo="ngModel" [(ngModel)]="cargos.nombre_cargo">
+                        </div>
+
+
+                        <div>
+                            <button type="submit" class="btn btn-dark">Agregar</button>        
+                        </div>
+                    </div>
+                </form>
+            </div>        
+        </div>
+
+</main>
+

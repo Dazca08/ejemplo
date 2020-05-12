@@ -28,7 +28,12 @@ export class ActuntipdocComponent implements OnInit {
     inicial_tipo_documento:''
   }
 
+
+  
  IdAcomparar:any
+
+
+
   constructor(
     private formBuilder: FormBuilder,
     private servi: ServicioService,

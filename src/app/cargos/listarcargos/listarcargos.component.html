@@ -1,1 +1,42 @@
-<p>listarcargos works!</p>
+<app-encabezado></app-encabezado>
+
+
+    <hr><hr>
+<main class="main">
+<div class="container">
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar el listado de Tipos de Documentos -->
+  <h1>Lista Cargos</h1>
+  <hr>
+  
+    <div align="center">
+      <div class="col-md-6">
+         <table class="table table-bordered table-dark table-striped" >
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Cargo</th>
+      </tr>    
+    </thead>
+  <tr *ngFor="let tido of Cargos" class="egt">
+  
+    <td>{{ tido.id_cargo }}</td>
+
+    <td>{{ tido.nombre_cargo}}</td>
+
+    </tr>
+  </table>
+      </div>
+      
+    </div>
+
+
+</div>
+<br><br>
+
+
+</main>
+
+
+
