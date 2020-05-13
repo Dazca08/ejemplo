@@ -1,1 +1,41 @@
-<p>insertarmateriales works!</p>
+<app-encabezado></app-encabezado>
+
+<hr><hr>
+<main class="main">
+
+    <div class="containes">
+
+        <h2>Agregar un Material</h2>
+
+    </div>
+
+        <div align=center>
+            <div class="col-md-6">
+                <form (ngSubmit)="InsertarMaterial(Form)"  #Form="ngForm">
+
+                    <div class="form-group">
+                        <div>  
+                            <label>Nombre Material:</label>
+                            <input type="text" name="nombre_material" class="form-control" #nombre_material="ngModel" [(ngModel)]="material.nombre_material">
+                        </div>
+
+                        <div>
+                            <label>Ingrese cantidad del material:</label>
+                            <input type="text" name="cantidad_material" class="form-control" #cantidad_material="ngModel" [(ngModel)]="material.cantidad_material">
+                        </div>
+
+                        <div>
+                            <label>Ingrese color del material:</label>
+                            <input type="text" name="color_material" class="form-control" #color_material="ngModel" [(ngModel)]="material.color_material">
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-dark">Agregar</button>        
+                        </div>
+                    </div>
+                </form>
+            </div>        
+        </div>
+
+</main>
+

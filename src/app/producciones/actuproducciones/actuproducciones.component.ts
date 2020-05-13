@@ -1,7 +1,7 @@
 import { ServicioService } from '../../servicio.service';
 
 
-import  {MaterialesInterface} from 'src/app/interfaces/materiales_interface'
+import  {ProduccionInterface} from 'src/app/interfaces/producciones-interface'
 import { Component, OnInit ,ViewChild,EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule,NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,26 +10,31 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
 import Swal from 'sweetalert2';
+
 @Component({
-  selector: 'app-actumateriales',
-  templateUrl: './actumateriales.component.html',
-  styleUrls: ['./actumateriales.component.css']
+  selector: 'app-actuproducciones',
+  templateUrl: './actuproducciones.component.html',
+  styleUrls: ['./actuproducciones.component.css']
 })
-export class ActumaterialesComponent implements OnInit {
+export class ActuproduccionesComponent implements OnInit {
 
-  MiMaterial: any = [];
+  MiProduccion: any = [];
 
 
-  Material:MaterialesInterface[];
-  material:MaterialesInterface={
-    id_material:'',
-    nombre_material:'',
-    cantidad_material:'',
-    color_material:''
+  
+  Produccion:ProduccionInterface[];
+  produccion:ProduccionInterface={
+    id_produccion:'',
+    material_produccion:'',
+    producto_produccion:'',
+    persona_produccion:'',
+    proceso_produccion:'',
+    fecha_inicio_produccion:'',
+    fecha_fin_produccion:'',
+    fecha_total_produccion:''
   }
 
-
-  IdAcomparar:any
+  IdAcomparar:any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,15 +42,15 @@ export class ActumaterialesComponent implements OnInit {
     Router: Router
   ) { }
 
-
+  
   //--------------------------------------------------------------
 
-  buscarEditarMaterial() {
+  buscarEditarProduccion() {
     
-    this.servi.getMaterial('/' + this.IdAcomparar).subscribe((data: {}) => {
+    this.servi.getProduccion('/' + this.IdAcomparar).subscribe((data: {}) => {
 
 
-      this.MiMaterial = data;
+      this.MiProduccion = data;
       
       
 
@@ -56,13 +61,13 @@ export class ActumaterialesComponent implements OnInit {
 
 //--------------------------------------------------------------
 
-public ActualizarMaterial({value}:{value:MaterialesInterface}) {
+public ActualizarProduccion({value}:{value:ProduccionInterface}) {
 
     
-  if(value.nombre_material==""){
+  if(value.material_produccion==''){
    Swal.fire(
      'Error al actualizar',
-       'El nombre esta vacio.',
+       'El material esta vacio.',
       'error'
               )
  
@@ -80,12 +85,12 @@ public ActualizarMaterial({value}:{value:MaterialesInterface}) {
        Swal.fire(
    
          'Guardado!',
-         'El Material ha sido Actualizado ',
+         'La produccion ha sido Actualizado ',
          'success'
         
        )
        
-        this.servi.updateMaterial(value).then
+        this.servi.updateproduccion(value).then
          (
            res => {
              console.log("res",res)
@@ -99,8 +104,6 @@ public ActualizarMaterial({value}:{value:MaterialesInterface}) {
        
    }
   }
- 
-  
 
   ngOnInit(): void {
   }

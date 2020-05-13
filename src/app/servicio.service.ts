@@ -351,6 +351,190 @@ getProductos(): Observable<any> {
 }
 
 
+// Método Listar los materiales
+   
+getMateriales(): Observable<any> {
+
+    
+
+  return this.http.get(this.Url + "/materiales", httpOptions).pipe(
+    map(this.extractData)      
+  );
+}
+
+
+//-------------------------------------------------------------
+ // Método mostrar un solo producto 
+
+ getMaterial(id): Observable<any> {
+    
+  return this.http.get(this.Url + "/materiales" + id, httpOptions).pipe(
+    map(this.extractData));
+}
+
+
+//-------------------------------------------------------------
+ // Método para insertar un nuevo material 
+
+  
+ async insertMaterial(masMaterial){
+  return this.http.post(this.Url + "/materiales", masMaterial, httpOptions).pipe(catchError(err => {
+            return of( err.error );
+        }))
+        .subscribe(res => {
+        console.log(res.ok ,res.message);
+        
+            console.log(res);
+        },
+        (err) => { console.log(err)
+        
+               console.log(err);
+
+},
+
+    );
+
+
+}
+
+
+//-------------------------------------------------------------
+ // Método para modificar un maaterial
+
+  
+ async updateMaterial(cadenaMaterial): Promise<any> {
+
+  
+ 
+  return new Promise((resolve, reject) => {
+    this.http.put(this.Url + "/materiales", cadenaMaterial, httpOptions).toPromise()
+  });
+}
+
+
+// Método Listar los procesos
+   
+getProcesos(): Observable<any> {
+
+    
+
+  return this.http.get(this.Url + "/procesos", httpOptions).pipe(
+    map(this.extractData)      
+  );
+}
+
+
+//-------------------------------------------------------------
+ // Método mostrar un solo proceso 
+
+ getProceso(id): Observable<any> {
+    
+  return this.http.get(this.Url + "/procesos" + id, httpOptions).pipe(
+    map(this.extractData));
+}
+
+
+//-------------------------------------------------------------
+ // Método para insertar un nuevo material 
+
+  
+ async insertProceso(masProceso){
+  return this.http.post(this.Url + "/procesos", masProceso, httpOptions).pipe(catchError(err => {
+            return of( err.error );
+        }))
+        .subscribe(res => {
+        console.log(res.ok ,res.message);
+        
+            console.log(res);
+        },
+        (err) => { console.log(err)
+        
+               console.log(err);
+
+},
+
+    );
+
+
+}
+
+
+//-------------------------------------------------------------
+ // Método para modificar un maaterial
+
+  
+ async updateProceso(cadenaProceso): Promise<any> {
+
+  
+ 
+  return new Promise((resolve, reject) => {
+    this.http.put(this.Url + "/procesos", cadenaProceso, httpOptions).toPromise()
+  });
+}
+
+
+
+// Método Listar las producciones
+   
+getProducciones(): Observable<any> {
+
+    
+
+  return this.http.get(this.Url + "/produccion", httpOptions).pipe(
+    map(this.extractData)      
+  );
+}
+
+
+//-------------------------------------------------------------
+ // Método mostrar una sola produccion 
+
+ getProduccion(id): Observable<any> {
+    
+  return this.http.get(this.Url + "/produccion" + id, httpOptions).pipe(
+    map(this.extractData));
+}
+
+
+//-------------------------------------------------------------
+ // Método para insertar una nueva produccion 
+
+  
+ async insertproduccion(masProduccion){
+  return this.http.post(this.Url + "/produccion", masProduccion, httpOptions).pipe(catchError(err => {
+            return of( err.error );
+        }))
+        .subscribe(res => {
+        console.log(res.ok ,res.message);
+        
+            console.log(res);
+        },
+        (err) => { console.log(err)
+        
+               console.log(err);
+
+},
+
+    );
+
+
+}
+
+
+//-------------------------------------------------------------
+ // Método para modificar una produccion
+
+  
+ async updateproduccion(cadenaProduccion): Promise<any> {
+
+  
+ 
+  return new Promise((resolve, reject) => {
+    this.http.put(this.Url + "/produccion", cadenaProduccion, httpOptions).toPromise()
+  });
+}
+
+
 
 }
 

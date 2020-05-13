@@ -1,7 +1,7 @@
 import { ServicioService } from '../../servicio.service';
 
 
-import  {MaterialesInterface} from 'src/app/interfaces/materiales_interface'
+import  {ProcesosInterface} from 'src/app/interfaces/procesos-interface'
 import { Component, OnInit ,ViewChild,EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule,NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,26 +10,29 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
 import Swal from 'sweetalert2';
+
 @Component({
-  selector: 'app-actumateriales',
-  templateUrl: './actumateriales.component.html',
-  styleUrls: ['./actumateriales.component.css']
+  selector: 'app-actuprocesos',
+  templateUrl: './actuprocesos.component.html',
+  styleUrls: ['./actuprocesos.component.css']
 })
-export class ActumaterialesComponent implements OnInit {
-
-  MiMaterial: any = [];
+export class ActuprocesosComponent implements OnInit {
 
 
-  Material:MaterialesInterface[];
-  material:MaterialesInterface={
-    id_material:'',
-    nombre_material:'',
-    cantidad_material:'',
-    color_material:''
+  MiProceso: any = [];
+
+
+  
+   Proceso:ProcesosInterface[];
+  proceso:ProcesosInterface={
+    id_proceso:'',
+    nombre_proceso:''
+    
   }
 
 
-  IdAcomparar:any
+  
+ IdAcomparar:any
 
   constructor(
     private formBuilder: FormBuilder,
@@ -38,14 +41,15 @@ export class ActumaterialesComponent implements OnInit {
   ) { }
 
 
+
   //--------------------------------------------------------------
 
-  buscarEditarMaterial() {
+  buscarEditarProceso() {
     
-    this.servi.getMaterial('/' + this.IdAcomparar).subscribe((data: {}) => {
+    this.servi.getProceso('/' + this.IdAcomparar).subscribe((data: {}) => {
 
 
-      this.MiMaterial = data;
+      this.MiProceso = data;
       
       
 
@@ -56,13 +60,13 @@ export class ActumaterialesComponent implements OnInit {
 
 //--------------------------------------------------------------
 
-public ActualizarMaterial({value}:{value:MaterialesInterface}) {
+public ActualizarProceso({value}:{value:ProcesosInterface}) {
 
     
-  if(value.nombre_material==""){
+  if(value.nombre_proceso==''){
    Swal.fire(
      'Error al actualizar',
-       'El nombre esta vacio.',
+       'El campo nombre esta vacio.',
       'error'
               )
  
@@ -80,12 +84,12 @@ public ActualizarMaterial({value}:{value:MaterialesInterface}) {
        Swal.fire(
    
          'Guardado!',
-         'El Material ha sido Actualizado ',
+         'El proceso ha sido Actualizado ',
          'success'
         
        )
        
-        this.servi.updateMaterial(value).then
+        this.servi.updateProceso(value).then
          (
            res => {
              console.log("res",res)
@@ -99,8 +103,7 @@ public ActualizarMaterial({value}:{value:MaterialesInterface}) {
        
    }
   }
- 
-  
+
 
   ngOnInit(): void {
   }

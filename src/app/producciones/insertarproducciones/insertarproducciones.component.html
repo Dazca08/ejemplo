@@ -1,0 +1,56 @@
+<app-encabezado></app-encabezado>
+
+<hr><hr>
+<main class="main">
+
+    <div class="containes">
+
+        <h2>Agregar una Produccion</h2>
+
+    </div>
+
+        <div align=center>
+            <div class="col-md-6">
+                <form (ngSubmit)="InsertarProduccion(Form)"  #Form="ngForm">
+
+                    <div class="form-group">
+                        <div>  
+                            <label>Seleccione material de produccion:</label>
+                            <input type="text" name="material_produccion" class="form-control" #material_produccion="ngModel" [(ngModel)]="produccion.material_produccion">
+                        </div>
+
+                        <div>
+                            <label>Seleccione un producto a producir:</label>
+                            <input type="text" name="producto_produccion" class="form-control" #producto_produccion="ngModel" [(ngModel)]="produccion.producto_produccion">
+                        </div>
+
+                        <div>
+                            <label>Seleccione una persona a la Produccion:</label>
+                            <input type="text" name="persona_produccion" class="form-control" #persona_produccion="ngModel" [(ngModel)]="produccion.persona_produccion">
+                        </div>
+
+                        <div>
+                            <label>Seleccione un proceso de Produccion:</label>
+                            <input type="text" name="proceso_produccion" class="form-control" #proceso_produccion="ngModel" [(ngModel)]="produccion.proceso_produccion">
+                        </div>
+
+                        <div>
+                            <label>Seleccione fecha de inicio:</label>
+                            <input type="date" name="fecha_inicio_produccion" class="form-control" #fecha_inicio_produccion="ngModel" [(ngModel)]="produccion.fecha_inicio_produccion">
+                        </div>
+
+                        <div>
+                            <label>Seleccione fecha de fin:</label>
+                            <input type="date" name="fecha_fin_produccion" class="form-control" #fecha_fin_produccion="ngModel" [(ngModel)]="produccion.fecha_fin_produccion">
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-dark">Agregar</button>        
+                        </div>
+                    </div>
+                </form>
+            </div>        
+        </div>
+
+</main>
+

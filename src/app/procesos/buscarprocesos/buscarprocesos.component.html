@@ -4,12 +4,12 @@
 <main class="main">
 
   <div class="container">
-    <h2>Buscar un Material</h2>
+    <h2>Buscar un Prpceso</h2>
       <div align="center">
         <div class="col-md-3">
-          <form (ngSubmit)="buscarMaterial()" [formGroup]="filtrarMaterial">
+          <form (ngSubmit)="buscarProcesos()" [formGroup]="filtrarProceso">
             <div class="form-group">
-              <label>Digite el id del material a buscar:</label>
+              <label>Digite el id del proceso a buscar:</label>
               <input type="text" formControlName="textfiltro"> 
             </div>
             <div>
@@ -21,22 +21,19 @@
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Material</th>
-                <th>Cantidad</th>
-                <th>Color</th>
+                <th>Proceso</th>
+                
               </tr>    
             </thead>
 
             <tbody>
-              <tr *ngFor="let tido of MiMaterial" class="egt">
+              <tr *ngFor="let tido of MiProceso" class="egt">
       
-                <td>{{ tido.id_material }}</td>
+                <td>{{ tido.id_proceso }}</td>
             
-                <td>{{ tido.nombre_material}}</td>
+                <td>{{ tido.nombre_proceso}}</td>
             
-                <td>{{ tido.cantidad_material}}</td>
-
-                <td>{{tido.color_material}}</td>
+                
               </tr>
             </tbody>
           </table>
@@ -46,4 +43,5 @@
     
   </div>
 </main>    
+
 

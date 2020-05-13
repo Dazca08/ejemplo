@@ -2,15 +2,15 @@
 <!--------------------------------------------------------------------------------------------->
 <!-- para actualizar un  Tipo de Documeto -->
 
-    <h2>Actualizar un Material</h2> 
+    <h2>Actualizar un Proceso</h2> 
     <hr><hr>
  
 <div class="edit">
     <div align="center">
         <div class="col-md-3">
-            <form (ngSubmit)="buscarEditarMaterial()" >
+            <form (ngSubmit)="buscarEditarProceso()" >
                 <div class="form-group">
-                    <label>id del Material a actualizar:</label>
+                    <label>id del proceso a actualizar:</label>
                     <input type="text" class="form-control" style="width:100" name=" IdAcomparar" placeholder="Poner id a buscar..." [(ngModel)]=" IdAcomparar">
                 </div>
                 <button type="submit" class="btn btn-dark">Buscar</button>
@@ -21,37 +21,25 @@
 
 
 
-    <form  (ngSubmit)="ActualizarMaterial(Form)"  #Form="ngForm" >
+    <form  (ngSubmit)="ActualizarProceso(Form)"  #Form="ngForm" >
       <div class="container">
         
           <div align="center">
             <div class="col-md-6">
               <div class="card">
-                <div class="card-body" *ngFor="let tido of MiMaterial">
+                <div class="card-body" *ngFor="let tido of MiProceso">
                   
 
                             <div class="form-group">
-                        <input type="hidden" name="id_material" class="form-control" #id_material="ngModel" [(ngModel)]="tido.id_material"
+                        <input type="hidden" name="id_proceso" class="form-control" #id_proceso="ngModel" [(ngModel)]="tido.id_proceso"
                  >
                     </div>
-                       <label>Ingrese el nombre del Material:</label>
+                       <label>Ingrese el nombre del proceso</label>
                        <div class="form-group">
-                         <input type="text" name="nombre_material" class="form-control" #nombre_material="ngModel" [(ngModel)]="tido.nombre_material"
+                         <input type="text" name="nombre_proceso" class="form-control" #nombre_proceso="ngModel" [(ngModel)]="tido.nombre_proceso"
                  >
                     </div>
-                        <label>Ingrese la cantidad del material:</label>
-                   <div class="form-group">
-                        <input type="text" name="cantidad_material" class="form-control" #cantidad_material="ngModel" [(ngModel)]="tido.cantidad_material"
-                 >
-                    </div>
-
-                    <label>Ingrese el color del material:</label>
-                   <div class="form-group">
-                        <input type="text" name="color_material" class="form-control" #color_material="ngModel" [(ngModel)]="tido.color_material"
-                 >
-                    </div>
-
-                    
+                        
                     <hr>
                      <div align="center">
             <button type="submit" style="width:200;" class="btn btn-dark">Actualizar</button>
@@ -72,3 +60,4 @@
 
    
   </div>
+

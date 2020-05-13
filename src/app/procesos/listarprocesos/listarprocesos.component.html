@@ -7,7 +7,7 @@
 
 <!--------------------------------------------------------------------------------------------->
 <!-- para mostrar el listado de Tipos de Documentos -->
-  <h1>Lista Materiales</h1>
+  <h1>Lista Procesos</h1>
   <hr>
   
     <div align="center">
@@ -16,20 +16,16 @@
     <thead>
       <tr>
         <th>Id</th>
-        <th>Material</th>
-        <th>Cantidad</th>
-        <th>Color</th>
+        <th>Proceso</th>
       </tr>    
     </thead>
-  <tr *ngFor="let tido of Materiales" class="egt">
+  <tr *ngFor="let tido of Procesos" class="egt">
   
-    <td>{{ tido.id_material }}</td>
+    <td>{{ tido.id_proceso }}</td>
 
-    <td>{{ tido.nombre_material}}</td>
+    <td>{{ tido.nombre_proceso}}</td>
 
-    <td>{{ tido.cantidad_material}}</td>
-
-    <td>{{tido.color_material}}</td>
+    
   </tr>
   </table>
       </div>

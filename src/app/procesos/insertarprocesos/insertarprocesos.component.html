@@ -1,0 +1,31 @@
+<app-encabezado></app-encabezado>
+
+<hr><hr>
+<main class="main">
+
+    <div class="containes">
+
+        <h2>Agregar un Proceso</h2>
+
+    </div>
+
+        <div align=center>
+            <div class="col-md-6">
+                <form (ngSubmit)="InsertarProceso(Form)"  #Form="ngForm">
+
+                    <div class="form-group">
+                        <div>  
+                            <label>Nombre Proceso:</label>
+                            <input type="text" name="nombre_proceso" class="form-control" #nombre_proceso="ngModel" [(ngModel)]="proceso.nombre_proceso">
+                        </div>
+
+
+                        <div>
+                            <button type="submit" class="btn btn-dark">Agregar</button>        
+                        </div>
+                    </div>
+                </form>
+            </div>        
+        </div>
+
+</main>

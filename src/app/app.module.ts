@@ -45,6 +45,14 @@ import { ListarmaterialesComponent } from './materiales/listarmateriales/listarm
 import { BuscarmaterialesComponent } from './materiales/buscarmateriales/buscarmateriales.component';
 import { InsertarmaterialesComponent } from './materiales/insertarmateriales/insertarmateriales.component';
 import { ActumaterialesComponent } from './materiales/actumateriales/actumateriales.component';
+import { ListarprocesosComponent } from './procesos/listarprocesos/listarprocesos.component';
+import { BuscarprocesosComponent } from './procesos/buscarprocesos/buscarprocesos.component';
+import { InsertarprocesosComponent } from './procesos/insertarprocesos/insertarprocesos.component';
+import { ActuprocesosComponent } from './procesos/actuprocesos/actuprocesos.component';
+import { ListarproduccionesComponent } from './producciones/listarproducciones/listarproducciones.component';
+import { BuscarproduccionesComponent } from './producciones/buscarproducciones/buscarproducciones.component';
+import { InsertarproduccionesComponent } from './producciones/insertarproducciones/insertarproducciones.component';
+import { ActuproduccionesComponent } from './producciones/actuproducciones/actuproducciones.component';
 
 
 
@@ -197,6 +205,56 @@ const appRoutes: Routes =
       component: ActumaterialesComponent,
     },
 
+
+    {
+      path: 'ListarProceso',
+      component: ListarprocesosComponent,
+    },
+
+
+    {
+      path: 'BuscarProceso',
+      component: BuscarprocesosComponent,
+    },
+
+
+    {
+      path: 'AgregarProceso',
+      component: InsertarprocesosComponent,
+    },
+
+
+    {
+      path: 'EditarProceso',
+      component: ActuprocesosComponent,
+    },
+
+
+    {
+      path: 'ListarProduccion',
+      component: ListarproduccionesComponent,
+    },
+
+
+    {
+      path: 'BuscarProduccion',
+      component: BuscarproduccionesComponent,
+    },
+
+
+    {
+      path: 'AgregarProduccion',
+      component: InsertarproduccionesComponent,
+    },
+
+    {
+      path: 'EditarProduccion',
+      component: ActuproduccionesComponent,
+    },
+
+
+    
+
     
 
   ];
@@ -234,7 +292,15 @@ const appRoutes: Routes =
     ListarmaterialesComponent,
     BuscarmaterialesComponent,
     InsertarmaterialesComponent,
-    ActumaterialesComponent,  //<- Adicionar los componentes
+    ActumaterialesComponent,
+    ListarprocesosComponent,
+    BuscarprocesosComponent,
+    InsertarprocesosComponent,
+    ActuprocesosComponent,
+    ListarproduccionesComponent,
+    BuscarproduccionesComponent,
+    InsertarproduccionesComponent,
+    ActuproduccionesComponent,  //<- Adicionar los componentes
   ],
 
   imports: 

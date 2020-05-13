@@ -1,7 +1,7 @@
 import { ServicioService } from '../../servicio.service';
 
 
-import  {MaterialesInterface} from 'src/app/interfaces/materiales_interface'
+import  {ProcesosInterface} from 'src/app/interfaces/procesos-interface'
 import { Component, OnInit ,ViewChild,EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule,NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,19 +12,17 @@ import { map, catchError, tap } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-insertarmateriales',
-  templateUrl: './insertarmateriales.component.html',
-  styleUrls: ['./insertarmateriales.component.css']
+  selector: 'app-insertarprocesos',
+  templateUrl: './insertarprocesos.component.html',
+  styleUrls: ['./insertarprocesos.component.css']
 })
-export class InsertarmaterialesComponent implements OnInit {
+export class InsertarprocesosComponent implements OnInit {
 
 
-  Material:MaterialesInterface[];
-  material:MaterialesInterface={
-    id_material:'',
-    nombre_material:'',
-    cantidad_material:'',
-    color_material:''
+  Proceso:ProcesosInterface[];
+  proceso:ProcesosInterface={
+    id_proceso:'',
+    nombre_proceso:''
   }
 
   constructor(
@@ -34,23 +32,25 @@ export class InsertarmaterialesComponent implements OnInit {
   ) { }
 
 
-  InsertarMaterial({value}:{value:MaterialesInterface}) {
+  InsertarProceso({value}:{value:ProcesosInterface}) {
         
      
     Swal.fire(
-      'Material agregado con exito!',
+      'Proceos agregado con exito!',
         ' Agregado!',
        'success'
                )
     console.log(value)
-     this.servi.insertMaterial(value).then(res => {console.log(res)}).catch(err => 
+     this.servi.insertProceso(value).then(res => {console.log(res)}).catch(err => 
 
 
        {console.log(err)});
      
    }
+     
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {
+ 
+}
 
 }

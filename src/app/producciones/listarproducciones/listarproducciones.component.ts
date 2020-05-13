@@ -5,14 +5,14 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-listarmateriales',
-  templateUrl: './listarmateriales.component.html',
-  styleUrls: ['./listarmateriales.component.css']
+  selector: 'app-listarproducciones',
+  templateUrl: './listarproducciones.component.html',
+  styleUrls: ['./listarproducciones.component.css']
 })
-export class ListarmaterialesComponent implements OnInit {
+export class ListarproduccionesComponent implements OnInit {
 
 
-  Materiales: any = [];
+  Producciones: any = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -21,17 +21,17 @@ export class ListarmaterialesComponent implements OnInit {
   ) { }
 
 
-  consultaMateriales() {
+  consultaProducciones() {
     
     
-    this.servi.getMateriales().subscribe((data: {tipdoc: []}) => {this.Materiales = data;}, error => {console.error(error + " ")});
+    this.servi.getProducciones().subscribe((data: {produccion: []}) => {this.Producciones = data;}, error => {console.error(error + " ")});
     
     
    
   }
 
   ngOnInit(): void {
-    this.consultaMateriales();
+    this.consultaProducciones();
   }
 
 }

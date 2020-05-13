@@ -1,0 +1,59 @@
+<app-encabezado></app-encabezado>
+<hr><hr>
+
+<main class="main">
+
+  <div class="container">
+    <h2>Buscar una Produccion</h2>
+      <div align="center">
+        <div class="col-md-3">
+          <form (ngSubmit)="buscarTipDocs()" [formGroup]="filtrarProduccion">
+            <div class="form-group">
+              <label>Digite el id de la produccion a buscar:</label>
+              <input type="text" formControlName="textfiltro"> 
+            </div>
+            <div>
+              <button type="submit" class="btn btn-dark">Buscar</button>
+            </div>
+          </form>
+          <hr><hr>
+          <table class="table table-bordered table-dark table-striped" >
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Material</th>
+                <th>Producto</th>
+                <th>Persona</th>
+                <th>Proceso</th>
+                <th>fecha inicio</th>
+                <th>fecha fin</th>
+              </tr>    
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let tido of MiProduccion" class="egt">
+      
+                <td>{{ tido.id_produccion }}</td>
+
+                <td>{{ tido.material_produccion}}</td>
+
+                <td>{{ tido.producto_produccion}}</td>
+
+                <td>{{tido.persona_produccion}}</td>
+
+                <td>{{tido.proceso_produccion}}</td>
+
+                <td>{{tido.fecha_inicio_produccion}}</td>
+
+                <td>{{tido.fecha_fin_produccion}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+    </div>    
+    
+  </div>
+</main>    
+
+

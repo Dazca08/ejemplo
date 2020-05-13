@@ -1,0 +1,89 @@
+<app-encabezado></app-encabezado>
+<!--------------------------------------------------------------------------------------------->
+<!-- para actualizar un  Tipo de Documeto -->
+
+    <h2>Actualizar una Produccion</h2> 
+    <hr><hr>
+ 
+<div class="edit">
+    <div align="center">
+        <div class="col-md-3">
+            <form (ngSubmit)="buscarEditarProduccion()" >
+                <div class="form-group">
+                    <label>id de la Produccion a actualizar:</label>
+                    <input type="text" class="form-control" style="width:100" name=" IdAcomparar" placeholder="Poner id a buscar..." [(ngModel)]=" IdAcomparar">
+                </div>
+                <button type="submit" class="btn btn-dark">Buscar</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <form  (ngSubmit)="ActualizarProduccion(Form)"  #Form="ngForm" >
+      <div class="container">
+        
+          <div align="center">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body" *ngFor="let tido of MiProduccion">
+                  
+
+                            <div class="form-group">
+                        <input type="hidden" name="id_produccion" class="form-control" #id_produccion="ngModel" [(ngModel)]="tido.id_produccion"
+                 >
+                    </div>
+                       
+                    <div>  
+                        <label>Seleccione material de produccion:</label>
+                        <input type="text" name="material_produccion" class="form-control" #material_produccion="ngModel" [(ngModel)]="produccion.material_produccion">
+                    </div>
+
+                    
+                    <div>
+                        <label>Seleccione un producto a producir:</label>
+                        <input type="text" name="producto_produccion" class="form-control" #producto_produccion="ngModel" [(ngModel)]="produccion.producto_produccion">
+                    </div>
+
+                    <div>
+                        <label>Seleccione una persona a la Produccion:</label>
+                        <input type="text" name="persona_produccion" class="form-control" #persona_produccion="ngModel" [(ngModel)]="produccion.persona_produccion">
+                    </div>
+
+                    <div>
+                        <label>Seleccione un proceso de Produccion:</label>
+                        <input type="text" name="proceso_produccion" class="form-control" #proceso_produccion="ngModel" [(ngModel)]="produccion.proceso_produccion">
+                    </div>
+
+                    <div>
+                        <label>Seleccione fecha de inicio:</label>
+                        <input type="date" name="fecha_inicio_produccion" class="form-control" #fecha_inicio_produccion="ngModel" [(ngModel)]="produccion.fecha_inicio_produccion">
+                    </div>
+
+                    <div>
+                        <label>Seleccione fecha de fin:</label>
+                        <input type="date" name="fecha_fin_produccion" class="form-control" #fecha_fin_produccion="ngModel" [(ngModel)]="produccion.fecha_fin_produccion">
+                    </div>
+
+                    <hr>
+                     <div align="center">
+            <button type="submit" style="width:200;" class="btn btn-dark">Actualizar</button>
+          </div>
+                </div>
+                
+              </div>
+             </div>
+
+          </div>
+         
+             
+      </div>
+
+       
+     
+    </form>
+
+   
+  </div>
+
