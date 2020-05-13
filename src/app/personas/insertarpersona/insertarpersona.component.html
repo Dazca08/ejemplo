@@ -9,17 +9,17 @@
 
     </div>
 
+    
+
         <div align=center>
             <div class="col-md-6">
                 <form (ngSubmit)="InsertarPersona(Form)"  #Form="ngForm">
 
                     <div class="form-group">
-                        <select>
-                            <option *ngFor="let tido of TipDocs" value="value1">{{tido.nombre_tipo_documento}}</option> 
-                        </select>
-                    <div *ngFor="let tido of TipDocs; let i = index" [attr.data-index]="i" class="egt">
+                        
+                    <div *ngFor="let tido of TipDocs; let i = index"  class="egt">
                     <h2>{{tido.nombre_tipo_documento}}</h2>
-                    <h2>{{tido.index}}</h2>
+                    <h2>{{i + 1}}</h2>
                     </div>
 
                         <div>  

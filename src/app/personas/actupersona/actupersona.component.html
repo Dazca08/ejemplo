@@ -34,11 +34,17 @@
                         <input type="hidden" name="id_persona" class="form-control" #id_persona="ngModel" [(ngModel)]="tido.id_persona"
                  >
                     </div>
-                       <label>Ingrese el tipo de documento:</label>
+
+                    <label>Seleccione el tipo de documento:</label>
                        <div class="form-group">
-                         <input type="text" name="tip_doc_persona" class="form-control" #tip_doc_persona="ngModel" [(ngModel)]="tido.tip_doc_persona"
-                 >
-                    </div>
+                        <select name="tip_doc_persona" class="form-control" #tip_doc_persona="ngModel" [(ngModel)]="tido.tip_doc_persona">
+                          <option value="0" selected>Seleccione...</option>
+                          <option *ngFor="let docs of TipDocs" value="{{docs.id_tipo_documento}}">{{docs.nombre_tipo_documento}}</option> 
+                      </select>
+                 
+                    </div>    
+
+                  
                         <label>Ingrese numero de documento:</label>
                    <div class="form-group">
                         <input type="text" name="num_documento_persona" class="form-control" #num_documento_persona="ngModel" [(ngModel)]="tido.num_documento_persona"
@@ -74,7 +80,7 @@
 
                     <label>Ingrese fecha nacimiento:</label>
                    <div class="form-group">
-                        <input type="text" name="fecha_nacimiento_persona" class="form-control" #fecha_nacimiento_persona="ngModel" [(ngModel)]="tido.fecha_nacimiento_persona"
+                        <input type="date" name="fecha_nacimiento_persona" class="form-control" #fecha_nacimiento_persona="ngModel" [(ngModel)]="tido.fecha_nacimiento_persona"
                  >
                     </div>
 
@@ -93,17 +99,27 @@
                     </div>
 
 
-                    <label>Ingrese genero:</label>
+                    <label>Seleccione genero:</label>
                     <div class="form-group">
-                         <input type="text" name="sexo_persona" class="form-control" #sexo_persona="ngModel" [(ngModel)]="tido.sexo_persona"
-                  >
+                         
+                      <select name="sexo_persona" class="form-control" #sexo_persona="ngModel" [(ngModel)]="tido.sexo_persona">
+
+                        <option value="" selected>Seleccione...</option>
+                        <option value="M">Masculino</option>
+
+                        <option value="F">Femenino</option>
+
+                      </select>
                      </div>
 
 
-                     <label>Ingrese cargo:</label>
+                     <label>Seleccione cargo:</label>
                      <div class="form-group">
-                          <input type="text" name="cargo_persona" class="form-control" #cargo_persona="ngModel" [(ngModel)]="tido.cargo_persona"
-                   >
+                          <select name="cargo_persona" class="form-control" #cargo_persona="ngModel" [(ngModel)]="tido.cargo_persona">
+                            <option value="">Seleccione</option>
+
+                            <option *ngFor="let carg of Cargos" value="{{carg.id_cargo}}">{{carg.nombre_cargo}}</option>
+                          </select>
                       </div>
                      
                     <hr>

@@ -18,6 +18,10 @@ import Swal from 'sweetalert2';
 })
 export class ActupersonaComponent implements OnInit {
 
+
+  TipDocs: any = [];
+  Cargos: any = [];
+
   PersonaA: any = [];
 
   Personas:PersonaInterface[];
@@ -99,10 +103,32 @@ export class ActupersonaComponent implements OnInit {
        })
            
        }
+
+
+          
+}
+
+consultaTipDocs() {
     
+    
+  this.servi.getTipDocs().subscribe((data: {tipdoc: []}) => {this.TipDocs = data;}, error => {console.error(error + " ")});
+  
+  
+ 
+}
+
+consultaCargos() {
+    
+    
+  this.servi.getCargos().subscribe((data: {tipdoc: []}) => {this.Cargos = data;}, error => {console.error(error + " ")});
+  
+  
+ 
 }
 
   ngOnInit(): void {
+    this.consultaTipDocs();
+    this.consultaCargos();
   }
 
 }

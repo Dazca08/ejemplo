@@ -1,1 +1,88 @@
-<p>actuproducto works!</p>
+<app-encabezado></app-encabezado>
+<!--------------------------------------------------------------------------------------------->
+<!-- para actualizar un  Tipo de Documeto -->
+
+    <h2>Actualizar un Producto</h2> 
+    <hr><hr>
+ 
+<div class="edit">
+    <div align="center">
+        <div class="col-md-3">
+            <form (ngSubmit)="buscarEditarProducto()" >
+                <div class="form-group">
+                    <label>id del producto a actualizar:</label>
+                    <input type="text" class="form-control" style="width:100" name=" IdAcomparar" placeholder="Poner id a buscar..." [(ngModel)]=" IdAcomparar">
+                </div>
+                <button type="submit" class="btn btn-dark">Buscar</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <form  (ngSubmit)="ActualizarProducto(Form)"  #Form="ngForm" >
+      <div class="container">
+        
+          <div align="center">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body" *ngFor="let tido of MiProducto">
+                  
+
+                            <div class="form-group">
+                        <input type="hidden" name="id_producto" class="form-control" #id_producto="ngModel" [(ngModel)]="tido.id_producto"
+                 >
+                    </div>
+                       <label>Ingrese el nombre del Producto:</label>
+                       <div class="form-group">
+                         <input type="text" name="nombre_producto" class="form-control" #nombre_producto="ngModel" [(ngModel)]="tido.nombre_producto"
+                 >
+                    </div>
+
+                        <label>Ingrese la descripcion del producto:</label>
+                   <div class="form-group">
+                        <input type="text" name="descripcion_producto" class="form-control" #descripcion_producto="ngModel" [(ngModel)]="tido.descripcion_producto"
+                 >
+                    </div>
+
+
+                    <label>Ingrese el color del producto:</label>
+                    <div class="form-group">
+                         <input type="text" name="color_producto" class="form-control" #color_producto="ngModel" [(ngModel)]="tido.color_producto"
+                  >
+                     </div>
+
+                    
+                     <label>Ingrese la talla del producto:</label>
+                     <div class="form-group">
+                          <input type="text" name="talla_producto" class="form-control" #talla_producto="ngModel" [(ngModel)]="tido.talla_producto"
+                   >
+                      </div> 
+
+                    
+                      <label>Ingrese el tipo del producto:</label>
+                     <div class="form-group">
+                          <input type="text" name="tipo_producto" class="form-control" #tipo_producto="ngModel" [(ngModel)]="tido.tipo_producto"
+                   >
+                      </div> 
+                    <hr>
+                     <div align="center">
+            <button type="submit" style="width:200;" class="btn btn-dark">Actualizar</button>
+          </div>
+                </div>
+                
+              </div>
+             </div>
+
+          </div>
+         
+             
+      </div>
+
+       
+     
+    </form>
+
+   
+  </div>

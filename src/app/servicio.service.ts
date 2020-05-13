@@ -276,7 +276,7 @@ getTipProductos(): Observable<any> {
 
 
 //-------------------------------------------------------------
- // Método para modificar un cargo
+ // Método para modificar un tipo producto
 
   
  async updateTipProducto(cadenaTipProducto): Promise<any> {
@@ -289,8 +289,73 @@ getTipProductos(): Observable<any> {
 }
 
 
+// Método Listar los tipos de productos
+   
+getProductos(): Observable<any> {
+
+    
+
+  return this.http.get(this.Url + "/productos", httpOptions).pipe(
+    map(this.extractData)      
+  );
+}
+
+
+//-------------------------------------------------------------
+ // Método mostrar un solo producto 
+
+ getProducto(id): Observable<any> {
+    
+  return this.http.get(this.Url + "/productos" + id, httpOptions).pipe(
+    map(this.extractData));
+}
+
+
+
+//-------------------------------------------------------------
+ // Método para insertar un nuevo tipo producto 
+
+  
+ async insertProducto(masProducto){
+  return this.http.post(this.Url + "/productos", masProducto, httpOptions).pipe(catchError(err => {
+            return of( err.error );
+        }))
+        .subscribe(res => {
+        console.log(res.ok ,res.message);
+        
+            console.log(res);
+        },
+        (err) => { console.log(err)
+        
+               console.log(err);
+
+},
+
+    );
+
 
 }
+
+
+//-------------------------------------------------------------
+ // Método para modificar un tipo producto
+
+  
+ async updateProducto(cadenaProducto): Promise<any> {
+
+  
+ 
+  return new Promise((resolve, reject) => {
+    this.http.put(this.Url + "/productos", cadenaProducto, httpOptions).toPromise()
+  });
+}
+
+
+
+}
+
+
+
 
 
 

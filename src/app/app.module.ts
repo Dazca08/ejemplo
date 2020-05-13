@@ -41,6 +41,10 @@ import { ListarproductoComponent } from './producto/listarproducto/listarproduct
 import { BuscarproductoComponent } from './producto/buscarproducto/buscarproducto.component';
 import { InsertarproductoComponent } from './producto/insertarproducto/insertarproducto.component';
 import { ActuproductoComponent } from './producto/actuproducto/actuproducto.component';
+import { ListarmaterialesComponent } from './materiales/listarmateriales/listarmateriales.component';
+import { BuscarmaterialesComponent } from './materiales/buscarmateriales/buscarmateriales.component';
+import { InsertarmaterialesComponent } from './materiales/insertarmateriales/insertarmateriales.component';
+import { ActumaterialesComponent } from './materiales/actumateriales/actumateriales.component';
 
 
 
@@ -170,6 +174,29 @@ const appRoutes: Routes =
       component: ActuproductoComponent,
     },
 
+
+    {
+      path: 'ListarMaterial',
+      component: ListarmaterialesComponent,
+    },
+
+
+    {
+      path: 'BuscarMaterial',
+      component: BuscarmaterialesComponent,
+    },
+
+    {
+      path: 'AgregarMaterial',
+      component: InsertarmaterialesComponent,
+    },
+
+
+    {
+      path: 'EditarMaterial',
+      component: ActumaterialesComponent,
+    },
+
     
 
   ];
@@ -203,7 +230,11 @@ const appRoutes: Routes =
     ListarproductoComponent,
     BuscarproductoComponent,
     InsertarproductoComponent,
-    ActuproductoComponent,  //<- Adicionar los componentes
+    ActuproductoComponent,
+    ListarmaterialesComponent,
+    BuscarmaterialesComponent,
+    InsertarmaterialesComponent,
+    ActumaterialesComponent,  //<- Adicionar los componentes
   ],
 
   imports: 

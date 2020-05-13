@@ -1,1 +1,55 @@
-<p>listarproducto works!</p>
+<app-encabezado></app-encabezado>
+
+
+    <hr><hr>
+<main class="main">
+<div class="container">
+
+<!--------------------------------------------------------------------------------------------->
+<!-- para mostrar el listado de Tipos de Documentos -->
+  <h1>Lista de productos</h1>
+  <hr>
+  
+    <div align="center">
+      <div class="col-md-6">
+         <table class="table table-bordered table-dark table-striped" >
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>descripcion</th>
+        <th>Color</th>
+        <th>Talla</th>
+        <th>Tipo Producto</th>
+      </tr>    
+    </thead>
+  <tr *ngFor="let tido of Productos" class="egt">
+  
+    <td>{{ tido.id_producto }}</td>
+
+    <td>{{ tido.nombre_producto}}</td>
+
+    <td>{{ tido.descripcion_producto}}</td>
+
+    <td>{{ tido.color_producto}}</td>
+
+    <td>{{ tido.talla_producto}}</td>
+
+    <td>{{ tido.nombre_tipo_producto}}</td>
+
+    
+  </tr>
+  </table>
+      </div>
+      
+    </div>
+
+
+</div>
+<br><br>
+
+
+</main>
+
+
+
