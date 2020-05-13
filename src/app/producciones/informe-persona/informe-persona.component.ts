@@ -12,8 +12,7 @@ export class InformePersonaComponent implements OnInit {
 
   MiInformePersona: any = [];
   filtrarInformePersona: FormGroup;
-  filtrofecha1: FormGroup;
-  filtrofecha2: FormGroup;
+  
 
   constructor(private formBuilder: FormBuilder,
               private servi: ServicioService,
@@ -33,18 +32,11 @@ export class InformePersonaComponent implements OnInit {
   ngOnInit(): void {
     this.filtrarInformePersona = this.formBuilder.group(
       {
-        textfiltro: []
+        textfiltro: [],
+        textfecha1: [],
+        textfecha2: []
       });
-    
-    this.filtrarInformePersona = this.formBuilder.group(
-        {
-          textfecha1: []
-        });
-        
-        this.filtrarInformePersona = this.formBuilder.group(
-          {
-            textfecha2: []
-          });     
+         
       this.formBuilder.group
   }
   }

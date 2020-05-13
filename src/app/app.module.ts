@@ -261,6 +261,12 @@ const appRoutes: Routes =
     },
 
 
+    {
+      path: 'Informeporproducto',
+      component: InformeProductoComponent,
+    },
+
+
     
 
     

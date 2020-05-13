@@ -1,1 +1,76 @@
-<p>informe-producto works!</p>
+<app-encabezado></app-encabezado>
+<hr><hr>
+
+<main class="main">
+
+  <div class="container">
+    <h2>Generar Informe </h2>
+      <div align="center">
+        <div class="col-md-3">
+          <form (ngSubmit)="buscarInformeProducto()" [formGroup]="filtrarInformeProducto">
+            <div class="form-group">
+              <label>Digite el id del producto a buscar:</label>
+              <input type="text" formControlName="textfiltro"> 
+            </div>
+
+
+            <div class="form-group">
+              <label>seleccione la fecha de inicio:</label>
+              <input type="date" formControlName="textfecha1"> 
+            </div>
+
+
+
+            <div class="form-group">
+                <label>Seleccione la fecha de fin:</label>
+                <input type="date" formControlName="textfecha2"> 
+              </div>
+
+
+
+            <div>
+              <button type="submit" class="btn btn-dark">Buscar</button>
+            </div>
+          </form>
+          <hr><hr>
+          <table class="table table-bordered table-dark table-striped" >
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Producto</th>
+                <th>Material</th>
+                <th>Persona</th>
+                <th>Proceso</th>
+                <th>fecha inicio</th>
+                <th>fecha fin</th>
+              </tr>    
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let tido of MiInformeProducto" class="egt">
+
+                <td>{{tido.id_produccion}}</td>
+      
+                <td>{{ tido.producto }}</td>
+
+                <td>{{ tido.material}}</td>
+
+                <td>{{ tido.nombre_completo}}</td>
+
+                <td>{{ tido.proceso}}</td>
+
+                <td>{{ tido.fecha_inicio_produccion}}</td>
+
+                <td>{{ tido.fecha_fin_produccion}}</td>
+
+            
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+    </div>    
+    
+  </div>
+</main>    
+

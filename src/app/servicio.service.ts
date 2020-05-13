@@ -536,7 +536,7 @@ getProducciones(): Observable<any> {
 
 
 //-------------------------------------------------------------
- // Método mostrar un solo proceso 
+ // Método mostrar informe de personas
 
  getInformePersona(id,fecha1persona,fecha2persona): Observable<any> {
     
@@ -544,7 +544,14 @@ getProducciones(): Observable<any> {
     map(this.extractData));
 }
 
+//-------------------------------------------------------------
+ // Método mostrar informe de personas
 
+ getInformeProducto(id,fecha1producto,fecha2producto): Observable<any> {
+    
+  return this.http.get(this.Url + "/produccion/infoproducto" + id + fecha1producto + fecha2producto, httpOptions).pipe(
+    map(this.extractData));
+}
 
 }
 
