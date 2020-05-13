@@ -53,6 +53,8 @@ import { ListarproduccionesComponent } from './producciones/listarproducciones/l
 import { BuscarproduccionesComponent } from './producciones/buscarproducciones/buscarproducciones.component';
 import { InsertarproduccionesComponent } from './producciones/insertarproducciones/insertarproducciones.component';
 import { ActuproduccionesComponent } from './producciones/actuproducciones/actuproducciones.component';
+import { InformePersonaComponent } from './producciones/informe-persona/informe-persona.component';
+import { InformeProductoComponent } from './producciones/informe-producto/informe-producto.component';
 
 
 
@@ -253,6 +255,12 @@ const appRoutes: Routes =
     },
 
 
+    {
+      path: 'Informeporpersona',
+      component: InformePersonaComponent,
+    },
+
+
     
 
     
@@ -300,7 +308,9 @@ const appRoutes: Routes =
     ListarproduccionesComponent,
     BuscarproduccionesComponent,
     InsertarproduccionesComponent,
-    ActuproduccionesComponent,  //<- Adicionar los componentes
+    ActuproduccionesComponent,
+    InformePersonaComponent,
+    InformeProductoComponent,  //<- Adicionar los componentes
   ],
 
   imports: 
