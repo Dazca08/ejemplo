@@ -9,8 +9,8 @@
         <div class="col-md-3">
           <form (ngSubmit)="buscarProducto()" [formGroup]="filtrarProducto">
             <div class="form-group">
-              <label>Digite el id del Producto a buscar:</label>
-              <input type="text" formControlName="textfiltro"> 
+              <label>id del Producto a buscar:</label>
+              <input type="text" placeholder="Digite el id..." formControlName="textfiltro"> 
             </div>
             <div>
               <button type="submit" class="btn btn-dark">Buscar</button>

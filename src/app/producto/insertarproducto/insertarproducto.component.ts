@@ -20,6 +20,9 @@ import Swal from 'sweetalert2';
 
 export class InsertarproductoComponent implements OnInit {
 
+
+  TipProductos: any = [];
+
   Producto:ProductoInterface[];
   producto:ProductoInterface={
     id_producto:'',
@@ -39,22 +42,64 @@ export class InsertarproductoComponent implements OnInit {
 
 
     InsertarProducto({value}:{value:ProductoInterface}) {
+
+      if(value.nombre_producto==''){
+        Swal.fire(
+          'Error al agregar',
+            'El nombre esta vacio.',
+           'error'
+                   )
+
+      }else if(value.color_producto==''){
+        Swal.fire(
+          'Error al agregar',
+            'El color esta vacio.',
+           'error'
+                   )
+
+      }else if(value.talla_producto==''){
+        Swal.fire(
+          'Error al agregar',
+            'La talla esta vacio.',
+           'error'
+                   )
+
+      }else if(value.tipo_producto==''){
+        Swal.fire(
+          'Error al agregar',
+            'No se selecciono el tipo producto.',
+           'error'
+                   )
+      }else{
+        Swal.fire(
+          'Producto agregado con exito!',
+            ' Agregado!',
+           'success'
+                   )
+        console.log(value)
+         this.servi.insertProducto(value).then(res => {console.log(res)}).catch(err => 
+  
+  
+           {console.log(err)});
+
+      }
         
      
-      Swal.fire(
-        'Producto agregado con exito!',
-          ' Agregado!',
-         'success'
-                 )
-      console.log(value)
-       this.servi.insertProducto(value).then(res => {console.log(res)}).catch(err => 
-
-
-         {console.log(err)});
+      
        
      }
 
+     consultaTipProductos() {
+    
+    
+      this.servi.getTipProductos().subscribe((data: {tipdoc: []}) => {this.TipProductos = data;}, error => {console.error(error + " ")});
+      
+      
+     
+    }
+
   ngOnInit(): void {
+    this.consultaTipProductos();
   }
 
 }

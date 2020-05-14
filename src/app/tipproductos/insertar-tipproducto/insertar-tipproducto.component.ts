@@ -37,17 +37,27 @@ export class InsertarTipproductoComponent implements OnInit {
 
   InsertarTipProducto({value}:{value:TipoProductoInterface}) {
         
-     
-    Swal.fire(
-      'Tipo de Producto agregado con exito!',
-        ' Agregado!',
-       'success'
-               )
-    console.log(value)
-     this.servi.insertTipProducto(value).then(res => {console.log(res)}).catch(err => 
+     if(value.nombre_tipo_producto==''){
+      Swal.fire(
+        'Error al Agregar',
+          ' El nombre esta vacio.',
+         'error'
+                 )
 
+     }else{
+      Swal.fire(
+        'Tipo de Producto agregado con exito!',
+          ' Agregado!',
+         'success'
+                 )
+      console.log(value)
+       this.servi.insertTipProducto(value).then(res => {console.log(res)}).catch(err => 
+  
+  
+         {console.log(err)});
 
-       {console.log(err)});
+     }
+    
      
    }
 

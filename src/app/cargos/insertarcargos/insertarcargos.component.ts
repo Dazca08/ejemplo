@@ -35,18 +35,27 @@ export class InsertarcargosComponent implements OnInit {
 
   InsertarCargo({value}:{value:CargoInterface}) {
         
-     
-    Swal.fire(
-      'Cargo agregado con exito!',
-        ' Agregado!',
-       'success'
-               )
-    console.log(value)
-     this.servi.insertCargo(value).then(res => {console.log(res)}).catch(err => 
-
-
-       {console.log(err)});
-     
+    if(value.nombre_cargo==''){
+      Swal.fire(
+        'Error al Agregar!',
+          'El Nombre esta vacio.',
+         'error'
+                 )
+    }else{
+    
+      Swal.fire(
+        'Cargo agregado con exito!',
+          ' Agregado!',
+         'success'
+                 )
+      console.log(value)
+       this.servi.insertCargo(value).then(res => {console.log(res)}).catch(err => 
+  
+  
+         {console.log(err)});
+    }
+    
+         
    }
 
   ngOnInit(): void {

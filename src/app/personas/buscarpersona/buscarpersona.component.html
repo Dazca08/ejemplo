@@ -9,8 +9,8 @@
         <div class="col-md-3">
           <form (ngSubmit)="buscarPersona()" [formGroup]="filtrarPersona">
             <div class="form-group">
-              <label>Digite el id de la Persona a buscar:</label>
-              <input type="text" formControlName="textfiltro"> 
+              <label>id de la Persona a buscar:</label>
+              <input type="text" placeholder="Digite el id..." formControlName="textfiltro"> 
             </div>
             <div>
               <button type="submit" class="btn btn-dark">Buscar</button>
@@ -23,8 +23,8 @@
                 <th>Id</th>
                 <th>Tipo Documento</th>
                 <th>Numero Documento</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
                 <th>Fecha Nacimiento</th>
                 <th>Correo Electronico</th>
                 <th>Telefono</th>

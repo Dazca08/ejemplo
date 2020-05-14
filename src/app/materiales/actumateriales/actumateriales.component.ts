@@ -58,14 +58,28 @@ export class ActumaterialesComponent implements OnInit {
 
 public ActualizarMaterial({value}:{value:MaterialesInterface}) {
 
-    
-  if(value.nombre_material==""){
-   Swal.fire(
-     'Error al actualizar',
-       'El nombre esta vacio.',
-      'error'
-              )
- 
+  if(value.nombre_material==''){
+
+    Swal.fire(
+      'Error al agregar',
+        'El nombre esta vacio.',
+       'error'
+               )
+  }else if(value.cantidad_material==''){
+
+    Swal.fire(
+      'Error al agregar',
+        'La cantidad no puede estar vacia.',
+       'error'
+               )
+
+  }else if(value.color_material==''){
+    Swal.fire(
+      'Error al agregar',
+        'El color esta vacio.',
+       'error'
+               )
+
   }else{
    Swal.fire({
      title: 'Esta seguro?',

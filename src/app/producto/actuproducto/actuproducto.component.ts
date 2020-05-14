@@ -19,6 +19,7 @@ import Swal from 'sweetalert2';
 export class ActuproductoComponent implements OnInit {
 
   MiProducto: any = [];
+  TipProductos: any = [];
 
 
   
@@ -70,41 +71,75 @@ public ActualizarProducto({value}:{value:ProductoInterface}) {
       'error'
               )
  
-  }else{
-   Swal.fire({
-     title: 'Esta seguro?',
-     text: "Desea guardar los cambios?",
-     icon: 'warning',
-     showCancelButton: true,
-     confirmButtonColor: '#3085d6',
-     cancelButtonColor: '#d33',
-     confirmButtonText: 'Si, guardar!'
-   }).then((result) => {
-     if (result.value) {
-       Swal.fire(
-   
-         'Guardado!',
-         'El Producto ha sido Actualizado ',
-         'success'
-        
-       )
+  }else if(value.color_producto==''){
+    Swal.fire(
+      'Error al actualizar',
+        'El campo color esta vacio.',
+       'error'
+               )
        
-        this.servi.updateProducto(value).then
-         (
-           res => {
-             console.log("res",res)
-           }
-         ).catch(err => {
-           console.log(err)
-         }) 
+   }else if(value.talla_producto==''){
+    Swal.fire(
+      'Error al actualizar',
+        'El campo talla esta vacio.',
+       'error'
+               )
+
+   }else if(value.tipo_producto==''){
+    Swal.fire(
+      'Error al actualizar',
+        'No se selecciono ningun tipo de producto.',
+       'error'
+               )
+
+   }else{
+    Swal.fire({
+      title: 'Esta seguro?',
+      text: "Desea guardar los cambios?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, guardar!'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
     
-     }
-   })
-       
+          'Guardado!',
+          'El Producto ha sido Actualizado ',
+          'success'
+         
+        )
+        
+         this.servi.updateProducto(value).then
+          (
+            res => {
+              console.log("res",res)
+            }
+          ).catch(err => {
+            console.log(err)
+          }) 
+     
+      }
+    })
    }
+
+
+   
+
+  }
+
+  consultaTipProductos() {
+    
+    
+    this.servi.getTipProductos().subscribe((data: {tipdoc: []}) => {this.TipProductos = data;}, error => {console.error(error + " ")});
+    
+    
+   
   }
 
   ngOnInit(): void {
+    this.consultaTipProductos();
   }
 
 }

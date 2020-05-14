@@ -16,27 +16,31 @@
                     <div class="form-group">
                         <div>  
                             <label>Nombre Producto:</label>
-                            <input type="text" name="nombre_producto" class="form-control" #nombre_producto="ngModel" [(ngModel)]="producto.nombre_producto">
+                            <input type="text" placeholder="Ingrese el nombre del producto..." name="nombre_producto" class="form-control" #nombre_producto="ngModel" [(ngModel)]="producto.nombre_producto">
                         </div>
 
                         <div>
-                            <label>Descripcion producto:</label>
-                            <input type="text" name="descripcion_producto" class="form-control" #descripcion_producto="ngModel" [(ngModel)]="producto.descripcion_producto">
+                            <label>Descripcion producto:(Opcional)</label>
+                            <input type="text" placeholder="Ingrese la descripcion del producto..." name="descripcion_producto" class="form-control" #descripcion_producto="ngModel" [(ngModel)]="producto.descripcion_producto">
                         </div>
 
                         <div>
-                            <label>Digite el color:</label>
-                            <input type="text" name="color_producto" class="form-control" #color_producto="ngModel" [(ngModel)]="producto.color_producto">
+                            <label>Color:</label>
+                            <input type="text" placeholder="Ingrese el color del producto..." name="color_producto" class="form-control" #color_producto="ngModel" [(ngModel)]="producto.color_producto">
                         </div>
 
                         <div>
-                            <label>Digite la talla:</label>
-                            <input type="text" name="talla_producto" class="form-control" #talla_producto="ngModel" [(ngModel)]="producto.talla_producto">
+                            <label>Talla:</label>
+                            <input type="text" placeholder="Ingrese talla del producto..." name="talla_producto" class="form-control" #talla_producto="ngModel" [(ngModel)]="producto.talla_producto">
                         </div>
 
                         <div>
-                            <label>Digite el tipo producto:</label>
-                            <input type="text" name="tipo_producto" class="form-control" #tipo_producto="ngModel" [(ngModel)]="producto.tipo_producto">
+                            <label>Tipo de producto:</label>
+                            <select name="tipo_producto" class="form-control" #tipo_producto="ngModel" [(ngModel)]="producto.tipo_producto">
+                                <option value="">Seleccione un tipo de producto...</option>
+                                <option *ngFor="let prod of TipProductos" value="{{prod.id_tipo_producto}}">{{prod.nombre_tipo_producto}}</option>
+                            </select>
+                            
                         </div>
 
                         <div>

@@ -34,17 +34,25 @@ export class InsertarprocesosComponent implements OnInit {
 
   InsertarProceso({value}:{value:ProcesosInterface}) {
         
-     
-    Swal.fire(
-      'Proceos agregado con exito!',
-        ' Agregado!',
-       'success'
-               )
-    console.log(value)
-     this.servi.insertProceso(value).then(res => {console.log(res)}).catch(err => 
-
-
-       {console.log(err)});
+     if(value.nombre_proceso==''){
+      Swal.fire(
+        'Error al agregar',
+          'El nombre esta vacio',
+         'error'
+                 )
+     }else{
+      Swal.fire(
+        'Proceos agregado con exito!',
+          ' Agregado!',
+         'success'
+                 )
+      console.log(value)
+       this.servi.insertProceso(value).then(res => {console.log(res)}).catch(err => 
+  
+  
+         {console.log(err)});
+     }
+    
      
    }
      

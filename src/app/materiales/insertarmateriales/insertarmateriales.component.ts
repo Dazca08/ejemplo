@@ -37,16 +37,40 @@ export class InsertarmaterialesComponent implements OnInit {
   InsertarMaterial({value}:{value:MaterialesInterface}) {
         
      
-    Swal.fire(
-      'Material agregado con exito!',
-        ' Agregado!',
-       'success'
-               )
-    console.log(value)
-     this.servi.insertMaterial(value).then(res => {console.log(res)}).catch(err => 
+    if(value.nombre_material==''){
 
+      Swal.fire(
+        'Error al agregar',
+          'El nombre esta vacio.',
+         'error'
+                 )
+    }else if(value.cantidad_material==''){
 
-       {console.log(err)});
+      Swal.fire(
+        'Error al agregar',
+          'La cantidad no puede estar vacia.',
+         'error'
+                 )
+
+    }else if(value.color_material==''){
+      Swal.fire(
+        'Error al agregar',
+          'El color esta vacio.',
+         'error'
+                 )
+
+    }else{
+      Swal.fire(
+        'Material agregado con exito!',
+          ' Agregado!',
+         'success'
+                 )
+      console.log(value)
+       this.servi.insertMaterial(value).then(res => {console.log(res)}).catch(err => 
+  
+  
+         {console.log(err)});
+    }
      
    }
 

@@ -63,10 +63,10 @@ IdAcomparar:any
  public ActualizarCargo({value}:{value:CargoInterface}) {
 
     
-  if(value.nombre_cargo == " "){
+  if(value.nombre_cargo == ""){
    Swal.fire(
      'Error al actualizar',
-       'El campo esta vacio, por favor intente de nuevo.',
+       'El nombre esta vacio.',
       'error'
               )
  

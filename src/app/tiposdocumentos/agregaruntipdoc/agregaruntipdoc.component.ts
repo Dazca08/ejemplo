@@ -40,20 +40,53 @@ export class AgregaruntipdocComponent implements OnInit {
 
   
     InsertarTipDoc({value}:{value:TipdocInterface}) {
-        
-     
-       Swal.fire(
-         'Tipo de documento agregado con exito!',
-           ' Agregado!',
-          'success'
-                  )
-       console.log(value)
-        this.servi.insertTipDoc(value).then(res => {console.log(res)}).catch(err => 
 
 
-          {console.log(err)});
+    if(value.nombre_tipo_documento==''){
+
+      Swal.fire(
+        'Error al Agregar',
+          'El campo del nombre esta vacio.',
+         'error'
+                 )
+
+    }else if(value.inicial_tipo_documento=='' ){
+
+      Swal.fire(
+        'Error al Agregar',
+          'El campo de las iniciales esta vacio.',
+         'error'
+                 )
+      
+       
+     }else if(value.inicial_tipo_documento.length>2){
+      Swal.fire(
+        'Error al Agregar',
+          'El campo de las iniciales es mayor a 2 letras.',
+         'error'
+                 )
+
+
+     }else{
+
+      Swal.fire(
+        'Tipo de documento agregado con exito!',
+          ' Agregado!',
+         'success'
+                 )
+      console.log(value)
+       this.servi.insertTipDoc(value).then(res => {console.log(res)}).catch(err => 
+
+
+         {console.log(err)});
+
+     }
+
+     }
+
+      
         
-      }
+       
         
 
   ngOnInit(): void {

@@ -19,6 +19,7 @@ import Swal from 'sweetalert2';
 export class InsertarpersonaComponent implements OnInit {
 
   TipDocs: any = [];
+  Cargos: any = [];
   
   Personas:PersonaInterface[];
   MiPersona:PersonaInterface={
@@ -46,17 +47,66 @@ export class InsertarpersonaComponent implements OnInit {
 
   InsertarPersona({value}:{value:PersonaInterface}) {
         
-     
-    Swal.fire(
-      'Tipo de documento agregado con exito!',
-        ' Agregado!',
-       'success'
-               )
-    console.log(value)
-     this.servi.insertPersona(value).then(res => {console.log(res)}).catch(err => 
+     if(value.tip_doc_persona==''){
+      Swal.fire(
+        'Error al Agregar',
+          'No se selecciono un tipo de documento.',
+         'error'
+                 )
+     }else if(value.num_documento_persona==''){
 
+      Swal.fire(
+        'Error al Agregar',
+          'No se ingreso un tipo de documento.',
+         'error'
+                 )
 
-       {console.log(err)});
+     }else if(value.nombre1_persona==''){
+
+      Swal.fire(
+        'Error al Agregar',
+          'No se ingreso un nombre.',
+         'error'
+                 )
+       
+
+     }else if(value.apellido1_persona==''){
+      Swal.fire(
+        'Error al Agregar',
+          'No se ingreso un apellido.',
+         'error'
+                 )
+     }else if(value.telefono_persona==''){
+      Swal.fire(
+        'Error al Agregar',
+          'No se ingreso un telefono.',
+         'error'
+                 )
+     }else if(value.cargo_persona==''){
+      Swal.fire(
+        'Error al Agregar',
+          'No se ingreso un cargo.',
+         'error'
+                 )
+     }else if(value.fecha_nacimiento_persona==''){
+      Swal.fire(
+        'Error al Agregar',
+          'No se ingreso una fecha de nacimiento.',
+         'error'
+                 )
+       
+     }else{
+      Swal.fire(
+        'Persona agregada con exito!',
+          ' Agregado!',
+         'success'
+                 )
+      console.log(value)
+       this.servi.insertPersona(value).then(res => {console.log(res)}).catch(err => 
+  
+  
+         {console.log(err)});
+     }
      
    }
 
@@ -69,9 +119,21 @@ export class InsertarpersonaComponent implements OnInit {
    
   }
 
+  consultaCargos() {
+    
+    
+    this.servi.getCargos().subscribe((data: {tipdoc: []}) => {this.Cargos = data;}, error => {console.error(error + " ")});
+    
+    
+   
+  }
+
+
+
   ngOnInit(): void {
 
     this.consultaTipDocs();
+    this.consultaCargos();
 
   }
 

@@ -38,7 +38,7 @@
                     <label>Seleccione el tipo de documento:</label>
                        <div class="form-group">
                         <select name="tip_doc_persona" class="form-control" #tip_doc_persona="ngModel" [(ngModel)]="tido.tip_doc_persona">
-                          <option value="0" selected>Seleccione...</option>
+                          <option value="" selected>Seleccione un tipo documento...</option>
                           <option *ngFor="let docs of TipDocs" value="{{docs.id_tipo_documento}}">{{docs.nombre_tipo_documento}}</option> 
                       </select>
                  

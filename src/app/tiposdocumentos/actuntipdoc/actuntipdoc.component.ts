@@ -67,37 +67,51 @@ export class ActuntipdocComponent implements OnInit {
      'error'
              )
 
- }else{
-  Swal.fire({
-    title: 'Esta seguro?',
-    text: "Desea guardar los cambios?",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Si, guardar!'
-  }).then((result) => {
-    if (result.value) {
-      Swal.fire(
+ }else if(value.inicial_tipo_documento=='') {
+  Swal.fire(
+    'Error al actualizar',
+      'El campo iniciales esta vacio.',
+     'error'
+             )
   
-        'Guardado!',
-        'El Tipo dedocumento ha sido Actualizado ',
-        'success'
-       
-      )
       
-       this.servi.updateTipDoc(value).then
-        (
-          res => {
-            console.log("res",res)
-          }
-        ).catch(err => {
-          console.log(err)
-        }) 
-   
-    }
-  })
-      
+  }else if(value.nombre_tipo_documento==''){
+    Swal.fire(
+      'Error al actualizar',
+        'El campo nombre esta vacio.',
+       'error'
+               )
+
+  }else{
+    Swal.fire({
+      title: 'Esta seguro?',
+      text: "Desea guardar los cambios?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, guardar!'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+    
+          'Guardado!',
+          'El Tipo dedocumento ha sido Actualizado ',
+          'success'
+         
+        )
+        
+         this.servi.updateTipDoc(value).then
+          (
+            res => {
+              console.log("res",res)
+            }
+          ).catch(err => {
+            console.log(err)
+          }) 
+     
+      }
+    })
   }
  }
  

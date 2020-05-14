@@ -4,13 +4,13 @@
 <main class="main">
 
   <div class="container">
-    <h2>Buscar un Prpceso</h2>
+    <h2>Buscar un Proceso</h2>
       <div align="center">
         <div class="col-md-3">
           <form (ngSubmit)="buscarProcesos()" [formGroup]="filtrarProceso">
             <div class="form-group">
-              <label>Digite el id del proceso a buscar:</label>
-              <input type="text" formControlName="textfiltro"> 
+              <label>id del proceso a buscar:</label>
+              <input type="text" placeholder="Ingrese Id..." formControlName="textfiltro"> 
             </div>
             <div>
               <button type="submit" class="btn btn-dark">Buscar</button>

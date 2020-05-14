@@ -37,23 +37,35 @@
                        
                     <div>  
                         <label>Seleccione material de produccion:</label>
-                        <input type="text" name="material_produccion" class="form-control" #material_produccion="ngModel" [(ngModel)]="produccion.material_produccion">
+                        <select name="material_produccion" class="form-control" #material_produccion="ngModel" [(ngModel)]="produccion.material_produccion" >
+                            <option value="">Seleccione material...</option>
+                            <option *ngFor="let mat of Materiales" value="{{mat.id_material}}">{{mat.nombre_material}}</option>
+                        </select>
                     </div>
 
                     
                     <div>
                         <label>Seleccione un producto a producir:</label>
-                        <input type="text" name="producto_produccion" class="form-control" #producto_produccion="ngModel" [(ngModel)]="produccion.producto_produccion">
-                    </div>
+                        <select name="producto_produccion" class="form-control" #producto_produccion="ngModel" [(ngModel)]="produccion.producto_produccion">
+                            <option value="">Seleccione producto...</option>
+                            <option *ngFor="let prod of Productos" value="{{prod.id_producto}}">{{prod.nombre_producto}}</option>
+                        </select>
+                        </div>
 
                     <div>
                         <label>Seleccione una persona a la Produccion:</label>
-                        <input type="text" name="persona_produccion" class="form-control" #persona_produccion="ngModel" [(ngModel)]="produccion.persona_produccion">
+                        <select name="persona_produccion" class="form-control" #persona_produccion="ngModel" [(ngModel)]="produccion.persona_produccion">
+                            <option value="">Seleccione una persona...</option>
+                            <option *ngFor="let per of Personas" value="{{per.id_persona}}">{{per.nombre_completo}}</option>
+                        </select>
                     </div>
 
                     <div>
                         <label>Seleccione un proceso de Produccion:</label>
-                        <input type="text" name="proceso_produccion" class="form-control" #proceso_produccion="ngModel" [(ngModel)]="produccion.proceso_produccion">
+                        <select name="proceso_produccion" class="form-control" #proceso_produccion="ngModel" [(ngModel)]="produccion.proceso_produccion">
+                            <option value="">Seleccione proceso...</option>
+                            <option *ngFor="let proc of Procesos" value="{{proc.id_proceso}}">{{proc.nombre_proceso}}</option>
+                        </select>
                     </div>
 
                     <div>

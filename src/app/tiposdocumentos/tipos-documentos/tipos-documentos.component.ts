@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../../servicio.service';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 
 
@@ -31,6 +32,8 @@ export class TiposDocumentosComponent implements OnInit {
   
 
    consultaTipDocs() {
+
+  
     
     
     this.servi.getTipDocs().subscribe((data: {tipdoc: []}) => {this.TipDocs = data;}, error => {console.error(error + " ")});

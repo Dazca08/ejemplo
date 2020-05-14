@@ -34,37 +34,40 @@
                         <input type="hidden" name="id_producto" class="form-control" #id_producto="ngModel" [(ngModel)]="tido.id_producto"
                  >
                     </div>
-                       <label>Ingrese el nombre del Producto:</label>
+                       <label>Nombre del Producto:</label>
                        <div class="form-group">
                          <input type="text" name="nombre_producto" class="form-control" #nombre_producto="ngModel" [(ngModel)]="tido.nombre_producto"
                  >
                     </div>
 
-                        <label>Ingrese la descripcion del producto:</label>
+                        <label>Descripcion del producto:(Opcional)</label>
                    <div class="form-group">
                         <input type="text" name="descripcion_producto" class="form-control" #descripcion_producto="ngModel" [(ngModel)]="tido.descripcion_producto"
                  >
                     </div>
 
 
-                    <label>Ingrese el color del producto:</label>
+                    <label>Color del producto:</label>
                     <div class="form-group">
                          <input type="text" name="color_producto" class="form-control" #color_producto="ngModel" [(ngModel)]="tido.color_producto"
                   >
                      </div>
 
                     
-                     <label>Ingrese la talla del producto:</label>
+                     <label>Talla del producto:</label>
                      <div class="form-group">
                           <input type="text" name="talla_producto" class="form-control" #talla_producto="ngModel" [(ngModel)]="tido.talla_producto"
                    >
                       </div> 
 
                     
-                      <label>Ingrese el tipo del producto:</label>
+                      <label>Seleccione el Tipo del producto:</label>
                      <div class="form-group">
-                          <input type="text" name="tipo_producto" class="form-control" #tipo_producto="ngModel" [(ngModel)]="tido.tipo_producto"
-                   >
+                    
+                   <select name="tipo_producto" class="form-control" #tipo_producto="ngModel" [(ngModel)]="tido.tipo_producto">
+                      <option value="">Seleccione tipo de producto...</option>
+                      <option *ngFor="let prod of TipProductos" value="{{prod.id_tipo_producto}}">{{prod.nombre_tipo_producto}}</option>
+                   </select>
                       </div> 
                     <hr>
                      <div align="center">

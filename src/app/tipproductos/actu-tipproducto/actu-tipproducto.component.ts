@@ -65,7 +65,7 @@ export class ActuTipproductoComponent implements OnInit {
   if(value.nombre_tipo_producto == ""){
    Swal.fire(
      'Error al actualizar',
-       'El campo esta vacio.',
+       'El nombre esta vacio.',
       'error'
               )
  

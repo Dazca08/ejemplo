@@ -20,6 +20,11 @@ export class ActuproduccionesComponent implements OnInit {
 
   MiProduccion: any = [];
 
+  Materiales: any = [];
+  Productos: any = [];
+  Personas: any = [];
+  Procesos: any = [];
+
 
   
   Produccion:ProduccionInterface[];
@@ -63,49 +68,115 @@ export class ActuproduccionesComponent implements OnInit {
 
 public ActualizarProduccion({value}:{value:ProduccionInterface}) {
 
-    
   if(value.material_produccion==''){
-   Swal.fire(
-     'Error al actualizar',
-       'El material esta vacio.',
-      'error'
-              )
- 
-  }else{
-   Swal.fire({
-     title: 'Esta seguro?',
-     text: "Desea guardar los cambios?",
-     icon: 'warning',
-     showCancelButton: true,
-     confirmButtonColor: '#3085d6',
-     cancelButtonColor: '#d33',
-     confirmButtonText: 'Si, guardar!'
-   }).then((result) => {
-     if (result.value) {
-       Swal.fire(
-   
-         'Guardado!',
-         'La produccion ha sido Actualizado ',
-         'success'
-        
-       )
+    Swal.fire(
+      'Error al agregar',
+        'Debe seleccionar un material.',
+       'error'
+               )
+   }else if(value.producto_produccion==''){
+    Swal.fire(
+      'Error al agregar',
+        'Debe seleccionar un producto.',
+       'error'
+               )
+   }else if(value.persona_produccion==''){
+    Swal.fire(
+      'Error al agregar',
+        'Debe seleccionar una persona.',
+       'error'
+               )
+   }else if(value.proceso_produccion==''){
+    Swal.fire(
+      'Error al agregar',
+        'Debe seleccionar un proceso.',
+       'error'
+               )
+   }else if(value.fecha_inicio_produccion==''){
+    Swal.fire(
+      'Error al agregar',
+        'Debe seleccionar una fecha de incio.',
+       'error'
+               )
+   }else if(value.fecha_fin_produccion==''){
+    Swal.fire(
+      'Error al agregar',
+        'Debe seleccionar una fecha de fin.',
+       'error'
+               )  
+    }else{
+      Swal.fire({
+        title: 'Esta seguro?',
+        text: "Desea guardar los cambios?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, guardar!'
+      }).then((result) => {
+        if (result.value) {
+          Swal.fire(
+      
+            'Guardado!',
+            'La produccion ha sido Actualizado ',
+            'success'
+           
+          )
+          
+           this.servi.updateproduccion(value).then
+            (
+              res => {
+                console.log("res",res)
+              }
+            ).catch(err => {
+              console.log(err)
+            }) 
        
-        this.servi.updateproduccion(value).then
-         (
-           res => {
-             console.log("res",res)
-           }
-         ).catch(err => {
-           console.log(err)
-         }) 
+        }
+      })
+    }            
+
     
-     }
-   })
-       
-   }
+
   }
 
+  consultaMateriales() {
+    
+    
+    this.servi.getMateriales().subscribe((data: {tipdoc: []}) => {this.Materiales = data;}, error => {console.error(error + " ")});
+    
+    
+   
+  }
+
+  consultaProductos() {
+    
+    
+    this.servi.getProductos().subscribe((data: {tipdoc: []}) => {this.Productos = data;}, error => {console.error(error + " ")});
+    
+    
+   
+  }
+
+  consultaPersonas() {
+    
+    this.servi.getPersonas().subscribe((data: {personas: []}) => {this.Personas = data;}, error => {console.error(error + " ")});
+
+  }
+
+  consultaProcesos() {
+    
+    
+    this.servi.getProcesos().subscribe((data: {proceso: []}) => {this.Procesos = data;}, error => {console.error(error + " ")});
+    
+    
+   
+  }
   ngOnInit(): void {
+    this.consultaMateriales();
+    this.consultaProductos();
+    this.consultaPersonas();
+    this.consultaProcesos();
   }
 
 }

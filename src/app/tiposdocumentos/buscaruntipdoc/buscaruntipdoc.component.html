@@ -9,8 +9,8 @@
         <div class="col-md-3">
           <form (ngSubmit)="buscarTipDocs()" [formGroup]="filtrarTipDoc">
             <div class="form-group">
-              <label>Digite el id del tipo de documento a buscar:</label>
-              <input type="text" formControlName="textfiltro"> 
+              <label>id del tipo de documento a buscar:</label>
+              <input type="text" placeholder="Ingrese id ..." formControlName="textfiltro"> 
             </div>
             <div>
               <button type="submit" class="btn btn-dark">Buscar</button>
@@ -21,7 +21,7 @@
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Nombre</th>
+                <th>Tipo de Documento</th>
                 <th>Inicial</th>
               </tr>    
             </thead>
