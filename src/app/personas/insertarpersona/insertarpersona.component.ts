@@ -96,6 +96,8 @@ export class InsertarpersonaComponent implements OnInit {
                  )
        
      }else{
+      
+     
       Swal.fire(
         'Persona agregada con exito!',
           ' Agregado!',

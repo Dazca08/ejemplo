@@ -72,7 +72,7 @@ export class ActupersonaComponent implements OnInit {
                   )
      
       }else{
-       Swal.fire({
+       /*Swal.fire({
          title: 'Esta seguro?',
          text: "Desea guardar los cambios?",
          icon: 'warning',
@@ -100,7 +100,7 @@ export class ActupersonaComponent implements OnInit {
              }) 
         
          }
-       })
+       })*/
            
        }
 
