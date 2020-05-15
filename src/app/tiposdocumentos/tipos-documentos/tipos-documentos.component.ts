@@ -16,7 +16,8 @@ export class TiposDocumentosComponent implements OnInit {
 
 
 
-  
+ /// es la pagina actual del paginado  
+  PageActual:number=1;
 
   TipDocs: any = [];
   

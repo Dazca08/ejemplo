@@ -20,7 +20,12 @@
         <th>Inicial</th>
       </tr>    
     </thead>
-  <tr *ngFor="let tido of TipDocs" class="egt">
+    <!-- 
+       se agrega el paginado despues de asignar el valor en el for, en itemsPerPage
+       se colocan la cantidad de elementos por pagina , en currentPage se llama a la pageActual
+       que esta en el ts y tiene el valor de 1
+    -->
+  <tr *ngFor="let tido of TipDocs | paginate:{itemsPerPage :5 , currentPage:PageActual}" >
   
     <td>{{ tido.id_tipo_documento }}</td>
 
@@ -29,6 +34,12 @@
     <td>{{ tido.inicial_tipo_documento}}</td>
   </tr>
   </table>
+   <hr>
+    <div align="center">
+      <!--se hace el llamado del componente de paginado tomando la pagina actual de ts exactamente de la variable PageActual -->
+        <pagination-controls (pageChange)="PageActual = $event"></pagination-controls>
+    </div>
+    
       </div>
       
     </div>

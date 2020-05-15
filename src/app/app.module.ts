@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 //.................................................................................
 //se incluyen los componentes que tenemos y el servicio
 import { AppComponent } from './appComponent/app.component';
+//libreria para paginacion
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 import { InicioComponent } from './inicio/inicio.component';
@@ -325,6 +327,7 @@ const appRoutes: Routes =
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
+    NgxPaginationModule,
    // HttpModule,
     RouterModule.forRoot(appRoutes), // se agregan estos 
     BrowserModule,
