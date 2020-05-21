@@ -12,8 +12,8 @@ export class ListarpersonasComponent implements OnInit {
 
   PageActual:number=1;
   Personas: any = [];
-  i: any;
-  Fechatemp: any;
+   i:number=0;
+   Fechatemp:string="";
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,8 +25,11 @@ export class ListarpersonasComponent implements OnInit {
   consultaPersonas() {
     
     
+    this.servi.getPersonas().subscribe(data =>{
+    
 
-    for(this.i=0;this.i<this.Personas.lenght;this.i++){
+        this.Personas = data;
+         for(this.i=0;this.i<this.Personas.length;this.i++){
       this.Fechatemp=this.Personas[this.i].fecha_nacimiento_persona;
       var splited= this.Fechatemp.split("T",2);
       console.log(splited)
@@ -35,7 +38,10 @@ export class ListarpersonasComponent implements OnInit {
 
       
     }
-    this.servi.getPersonas().subscribe((data: {personas: []}) => {this.Personas = data;}, error => {console.error(error + " ")});
+
+
+
+    }, error => {console.error(error + " ")});
   }
 
   ngOnInit(): void {
