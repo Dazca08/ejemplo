@@ -17,8 +17,10 @@
             </div>
           </form>
           <hr><hr>
+
+          <div *ngFor="let tido of MiTipDoc" class="egt">
           <table class="table table-bordered table-dark table-striped" >
-            <thead>
+            <thead >
               <tr>
                 <th>Id</th>
                 <th>Tipo de Documento</th>
@@ -27,7 +29,7 @@
             </thead>
 
             <tbody>
-              <tr *ngFor="let tido of MiTipDoc" class="egt">
+              <tr >
       
                 <td>{{ tido.id_tipo_documento }}</td>
             
@@ -37,7 +39,7 @@
               </tr>
             </tbody>
           </table>
-
+        </div>    
         </div>
     </div>    
     

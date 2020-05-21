@@ -12,6 +12,7 @@ export class ListarcargosComponent implements OnInit {
 
 
   Cargos: any = [];
+  PageActual:number=1;
 
   constructor(
     private formBuilder: FormBuilder,

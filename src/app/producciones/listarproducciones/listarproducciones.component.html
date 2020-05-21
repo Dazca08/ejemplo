@@ -11,7 +11,7 @@
   <hr>
   
     <div align="center">
-      <div class="col-md-6">
+      <div class="col-md-10">
          <table class="table table-bordered table-dark table-striped" >
     <thead>
       <tr>
@@ -24,17 +24,17 @@
         <th>fecha fin</th>
     </tr>    
     </thead>
-  <tr *ngFor="let tido of Producciones" class="egt">
+  <tr *ngFor="let tido of Producciones | paginate:{itemsPerPage :5 , currentPage:PageActual}" >
   
     <td>{{ tido.id_produccion }}</td>
 
-    <td>{{ tido.material_produccion}}</td>
+    <td>{{ tido.nombre_material}}</td>
 
-    <td>{{ tido.producto_produccion}}</td>
+    <td>{{ tido.nombre_producto}}</td>
 
-    <td>{{tido.persona_produccion}}</td>
+    <td>{{tido.nombre_completo}}</td>
 
-    <td>{{tido.proceso_produccion}}</td>
+    <td>{{tido.nombre_proceso}}</td>
 
     <td>{{tido.fecha_inicio_produccion}}</td>
 
@@ -44,6 +44,8 @@
   </table>
       </div>
       
+      <pagination-controls (pageChange)="PageActual = $event"></pagination-controls>
+
     </div>
 
 

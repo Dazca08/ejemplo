@@ -32,7 +32,11 @@
               <button type="submit" class="btn btn-dark">Buscar</button>
             </div>
           </form>
+        </div>
           <hr><hr>
+
+          <div *ngFor="let tido of MiInformeProducto" class="egt">
+            <div class="col-md-12">
           <table class="table table-bordered table-dark table-striped" >
             <thead>
               <tr>
@@ -47,7 +51,7 @@
             </thead>
 
             <tbody>
-              <tr *ngFor="let tido of MiInformeProducto" class="egt">
+              <tr >
 
                 <td>{{tido.id_produccion}}</td>
       
@@ -67,8 +71,9 @@
               </tr>
             </tbody>
           </table>
-
-        </div>
+            </div>
+          </div>
+        
     </div>    
     
   </div>

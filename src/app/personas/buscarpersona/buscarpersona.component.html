@@ -6,17 +6,20 @@
   <div class="container">
     <h2>Buscar una Persona</h2>
       <div align="center">
-        <div class="col-md-3">
+        <div class="col-md-13">
           <form (ngSubmit)="buscarPersona()" [formGroup]="filtrarPersona">
             <div class="form-group">
+
               <label>id de la Persona a buscar:</label>
               <input type="text" placeholder="Digite el id..." formControlName="textfiltro"> 
             </div>
             <div>
+              
               <button type="submit" class="btn btn-dark">Buscar</button>
             </div>
           </form>
           <hr><hr>
+          <div *ngFor="let tido of MiPersona" class="egt">
           <table class="table table-bordered table-dark table-striped" >
             <thead>
               <tr>
@@ -34,7 +37,7 @@
             </thead>
 
             <tbody>
-              <tr *ngFor="let tido of MiPersona" class="egt">
+              <tr >
       
                 <td>{{ tido.id_persona }}</td>
             
@@ -59,7 +62,7 @@
               </tr>
             </tbody>
           </table>
-
+        </div>
         </div>
     </div>    
     

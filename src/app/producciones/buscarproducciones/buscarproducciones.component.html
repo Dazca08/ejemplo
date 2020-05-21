@@ -6,7 +6,7 @@
   <div class="container">
     <h2>Buscar una Produccion</h2>
       <div align="center">
-        <div class="col-md-3">
+        <div class="col-md-6">
           <form (ngSubmit)="buscarTipDocs()" [formGroup]="filtrarProduccion">
             <div class="form-group">
               <label>id de la produccion a buscar:</label>
@@ -17,6 +17,7 @@
             </div>
           </form>
           <hr><hr>
+          <div *ngFor="let tido of MiProduccion" class="egt">
           <table class="table table-bordered table-dark table-striped" >
             <thead>
               <tr>
@@ -31,17 +32,17 @@
             </thead>
 
             <tbody>
-              <tr *ngFor="let tido of MiProduccion" class="egt">
+              <tr >
       
                 <td>{{ tido.id_produccion }}</td>
 
-                <td>{{ tido.material_produccion}}</td>
+                <td>{{ tido.nombre_material}}</td>
 
-                <td>{{ tido.producto_produccion}}</td>
+                <td>{{ tido.nombre_producto}}</td>
 
-                <td>{{tido.persona_produccion}}</td>
+                <td>{{tido.nombre_completo}}</td>
 
-                <td>{{tido.proceso_produccion}}</td>
+                <td>{{tido.nombre_proceso}}</td>
 
                 <td>{{tido.fecha_inicio_produccion}}</td>
 
@@ -49,7 +50,7 @@
               </tr>
             </tbody>
           </table>
-
+        </div>
         </div>
     </div>    
     

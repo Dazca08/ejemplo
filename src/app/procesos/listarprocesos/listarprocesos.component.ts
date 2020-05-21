@@ -12,6 +12,7 @@ export class ListarprocesosComponent implements OnInit {
 
 
   Procesos: any = [];
+  PageActual:number=1;
 
   constructor(
     private formBuilder: FormBuilder,

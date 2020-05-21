@@ -13,6 +13,9 @@ export class ListarproduccionesComponent implements OnInit {
 
 
   Producciones: any = [];
+  Fechatemp: any;
+  PageActual:number=1;
+  
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,7 +25,6 @@ export class ListarproduccionesComponent implements OnInit {
 
 
   consultaProducciones() {
-    
     
     this.servi.getProducciones().subscribe((data: {produccion: []}) => {this.Producciones = data;}, error => {console.error(error + " ")});
     

@@ -13,6 +13,7 @@ export class ListarmaterialesComponent implements OnInit {
 
 
   Materiales: any = [];
+  PageActual:number=1;
 
   constructor(
     private formBuilder: FormBuilder,

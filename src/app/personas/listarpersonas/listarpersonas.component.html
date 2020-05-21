@@ -11,7 +11,7 @@
   <hr>
   
     <div align="center">
-      <div class="col-md-6">
+      <div class="col-md-13">
          <table class="table table-bordered table-dark table-striped" >
     <thead>
       <tr>
@@ -26,7 +26,7 @@
         <th>Cargo</th>
       </tr>    
     </thead>
-  <tr *ngFor="let tido of Personas" class="egt">
+  <tr *ngFor="let tido of Personas | paginate:{itemsPerPage :5 , currentPage:PageActual}" >
   
     <td>{{ tido.id_persona }}</td>
 
@@ -48,6 +48,8 @@
   </tr>
   </table>
       </div>
+
+      <pagination-controls (pageChange)="PageActual = $event"></pagination-controls>
       
     </div>
 

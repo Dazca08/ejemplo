@@ -14,7 +14,7 @@ export class ListarproductoComponent implements OnInit {
 
 
   
-
+  PageActual:number=1;
   Productos: any = [];
   
 

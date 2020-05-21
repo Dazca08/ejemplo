@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ListarTipproductosComponent implements OnInit {
 
   TipProductos: any = [];
+  PageActual:number=1;
 
   constructor(
     private formBuilder: FormBuilder,

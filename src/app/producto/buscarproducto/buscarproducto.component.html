@@ -6,7 +6,7 @@
   <div class="container">
     <h2>Buscar un Producto</h2>
       <div align="center">
-        <div class="col-md-3">
+        <div class="col-md-6">
           <form (ngSubmit)="buscarProducto()" [formGroup]="filtrarProducto">
             <div class="form-group">
               <label>id del Producto a buscar:</label>
@@ -17,6 +17,8 @@
             </div>
           </form>
           <hr><hr>
+
+          <div *ngFor="let tido of MiProducto" class="egt">
           <table class="table table-bordered table-dark table-striped" >
             <thead>
               <tr>
@@ -30,7 +32,7 @@
             </thead>
 
             <tbody>
-              <tr *ngFor="let tido of MiProducto" class="egt">
+              <tr >
       
                 <td>{{ tido.id_producto }}</td>
             
@@ -46,7 +48,7 @@
               </tr>
             </tbody>
           </table>
-
+         </div>
         </div>
     </div>    
     

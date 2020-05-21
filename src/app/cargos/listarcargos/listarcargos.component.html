@@ -19,7 +19,7 @@
         <th>Cargo</th>
       </tr>    
     </thead>
-  <tr *ngFor="let tido of Cargos" class="egt">
+  <tr *ngFor="let tido of Cargos | paginate:{itemsPerPage :5 , currentPage:PageActual}">
   
     <td>{{ tido.id_cargo }}</td>
 
@@ -28,9 +28,11 @@
     </tr>
   </table>
       </div>
-      
+    
+      <pagination-controls (pageChange)="PageActual = $event"></pagination-controls>
     </div>
 
+    
 
 </div>
 <br><br>
