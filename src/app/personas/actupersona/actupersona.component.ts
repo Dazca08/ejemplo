@@ -41,7 +41,8 @@ export class ActupersonaComponent implements OnInit {
   }
 
   IdAcomparar:any
-
+   i:number=0;
+   Fechatemp:string="";
   constructor(
     private formBuilder: FormBuilder,
     private servi: ServicioService,
@@ -54,7 +55,11 @@ export class ActupersonaComponent implements OnInit {
 
 
       this.PersonaA = data;
-      
+       this.Fechatemp=this.PersonaA[0].fecha_nacimiento_persona;
+      var splited= this.Fechatemp.split("T",2);
+      console.log(splited)
+      this.Fechatemp=splited[0];
+      this.PersonaA[0].fecha_nacimiento_persona=this.Fechatemp;
       
 
     }, error => { console.log(error) });
