@@ -14,6 +14,9 @@ export class BuscarpersonaComponent implements OnInit {
   MiPersona: any = [];
   filtrarPersona: FormGroup;
 
+  i:number=0;
+  Fechatemp:string="";
+
   constructor(
     private formBuilder: FormBuilder,
     private servi: ServicioService,
@@ -23,7 +26,19 @@ export class BuscarpersonaComponent implements OnInit {
 
       var filtovalor = this.filtrarPersona.getRawValue()['textfiltro'];
   
-      this.servi.getPersona('/' + filtovalor).subscribe((data: {}) => {this.MiPersona = data;}, error => {console.log(error)});
+      this.servi.getPersona('/' + filtovalor).subscribe((data: {}) => {
+        
+        this.MiPersona = data;
+        for(this.i=0;this.i<this.MiPersona.length;this.i++){
+          this.Fechatemp=this.MiPersona[this.i].fecha_nacimiento_persona;
+          var splited= this.Fechatemp.split("T",2);
+          console.log(splited)
+          this.Fechatemp=splited[0];
+          this.MiPersona[this.i].fecha_nacimiento_persona=this.Fechatemp;
+    
+          
+        }
+      }, error => {console.log(error)});
       
     }
 
